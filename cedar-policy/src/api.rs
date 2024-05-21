@@ -3026,7 +3026,21 @@ impl<S> RequestBuilder<S> {
     #[must_use]
     pub fn principal(self, principal: EntityUid) -> Self {
         Self {
-            principal: ast::EntityUIDEntry::known(principal.into(), None),
+            // principal: principal.map_or(
+            //     ast::EntityUIDEntry::concrete(
+            //         ast::EntityUID::unspecified_from_eid(ast::Eid::new("principal")),
+            //         None,
+            //     ),
+            //     |p| ast::EntityUIDEntry::concrete(p.into(), None),
+            // ),
+            principal: principal.map_or(
+                ast::EntityUIDEntry::concrete(
+                    principal.map_or()
+                    ast::EntityUID::unspecified_from_eid(ast::Eid::new("principal")),
+                    None,
+                ),
+                |p| ast::EntityUIDEntry::concrete(p.into(), None),
+            ),
             ..self
         }
     }
