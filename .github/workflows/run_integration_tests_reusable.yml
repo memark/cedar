@@ -1,6 +1,8 @@
 name: Run Integration Tests
 
 on:
+  push: {}
+  workflow_dispatch: {}
   workflow_call:
     inputs:
       cedar_integration_tests_ref:
