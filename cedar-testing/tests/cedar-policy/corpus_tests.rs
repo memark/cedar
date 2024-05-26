@@ -1,3 +1,4 @@
+#![allow(dead_code, unused_imports, unused_variables)]
 /*
  * Copyright Cedar Contributors
  *
@@ -32,7 +33,7 @@ fn folder() -> &'static Path {
 // even if many of the corpus tests fail.
 // TODO(#438): figure out if we can procedurally generate one #[test]
 // per corpus test.
-#[test]
+// #[test]
 // Don't run the corpus tests by default because they can take a minute to
 // complete, slowing things down substantially.
 #[ignore]
@@ -58,3 +59,5 @@ fn corpus_tests() {
         perform_integration_test_from_json(test_json);
     }
 }
+
+include!(concat!(env!("OUT_DIR"), "/generated_tests.rs"));
