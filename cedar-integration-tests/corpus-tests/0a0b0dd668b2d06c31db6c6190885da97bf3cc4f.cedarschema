@@ -1,0 +1,11 @@
+namespace R {entity a  = {  };
+action "action" appliesTo {  principal: [a], 
+  resource: [a], 
+  context: { "B"?: __cedar::String,
+"Or8nnnnnYHIHwHHWH": __cedar::String,
+"R"?: __cedar::String,
+"r"?: __cedar::String,
+"u": __cedar::Long,
+ }
+};
+}

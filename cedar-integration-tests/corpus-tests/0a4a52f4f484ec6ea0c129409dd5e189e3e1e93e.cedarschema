@@ -1,0 +1,33 @@
+entity A  = { "Feeeeeeeee____"?: __cedar::Bool,
+"Feeeeeeeeeee__"?: __cedar::Bool,
+"Feeeeeeeeeeeee"?: __cedar::Bool,
+"J"?: __cedar::Bool,
+"JHW"?: __cedar::Bool,
+"L"?: __cedar::Bool,
+"R"?: __cedar::String,
+"THHYqHW"?: __cedar::Bool,
+"T_8____"?: Set < __cedar::Bool >,
+"T___e93"?: __cedar::Bool,
+"p"?: __cedar::String,
+"r3"?: __cedar::String,
+"s"?: Set < __cedar::Bool >,
+"ue"?: __cedar::Bool,
+"y0"?: __cedar::Bool,
+"ye"?: __cedar::Bool,
+ };
+entity r  = {  };
+entity Eacq333333333 in [R, A, r] = {  };
+entity R in [A, r] = {  };
+action "gcgggggggg\u{11}\u{11}-s\u{11}" appliesTo {  principal: [Eacq333333333, r], 
+  resource: [Eacq333333333, R, A, r], 
+  context: {  }
+};
+action "oggggggggggggggggg" appliesTo {  context: {}
+};
+action "s\u{11}" appliesTo {  context: {}
+};
+action "" appliesTo {  principal: [Eacq333333333, R, A, r], 
+  resource: [Eacq333333333, R, A], 
+  context: {  }
+};
+
