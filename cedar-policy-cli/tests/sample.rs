@@ -22,12 +22,12 @@ use std::collections::HashMap;
 
 use cedar_policy::EvalResult;
 use cedar_policy::SlotId;
-use cedar_policy_cli::check_parse;
+use cedar_policy_cli::check_parse::check_parse;
 use cedar_policy_cli::SchemaFormat;
 use cedar_policy_cli::{
-    authorize::authorize, authorize::AuthorizeArgs, evaluate::evaluate, evaluate::EvaluateArgs,
-    link, validate, Arguments, CedarExitCode, CheckParseArgs, LinkArgs, PoliciesArgs, PolicyFormat,
-    RequestArgs, ValidateArgs,
+    authorize::authorize, authorize::AuthorizeArgs, check_parse::CheckParseArgs,
+    evaluate::evaluate, evaluate::EvaluateArgs, link, validate, Arguments, CedarExitCode, LinkArgs,
+    PoliciesArgs, PolicyFormat, RequestArgs, ValidateArgs,
 };
 
 fn run_check_parse_test(policies_file: impl Into<String>, expected_exit_code: CedarExitCode) {

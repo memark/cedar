@@ -20,6 +20,7 @@
 #![allow(clippy::needless_return)]
 
 use authorize::AuthorizeArgs;
+use check_parse::CheckParseArgs;
 use clap::{ArgAction, Args, Parser, Subcommand, ValueEnum};
 use evaluate::EvaluateArgs;
 use miette::{miette, IntoDiagnostic, NamedSource, Report, Result, WrapErr};
@@ -40,6 +41,7 @@ use cedar_policy::*;
 use cedar_policy_formatter::{policies_str_to_pretty, Config};
 
 pub mod authorize;
+pub mod check_parse;
 pub mod evaluate;
 pub mod translate_schema;
 
@@ -152,13 +154,6 @@ pub struct ValidateArgs {
     /// experimental feature `permissive-validate` and `partial-validate`, respectively, enabled.
     #[arg(long, value_enum, default_value_t = ValidationMode::Strict)]
     pub validation_mode: ValidationMode,
-}
-
-#[derive(Args, Debug)]
-pub struct CheckParseArgs {
-    /// Policies args (incorporated by reference)
-    #[command(flatten)]
-    pub policies: PoliciesArgs,
 }
 
 /// This struct contains the arguments that together specify a request.
@@ -452,16 +447,6 @@ impl Termination for CedarExitCode {
             CedarExitCode::Failure => ExitCode::FAILURE,
             CedarExitCode::AuthorizeDeny => ExitCode::from(2),
             CedarExitCode::ValidationFailure => ExitCode::from(3),
-        }
-    }
-}
-
-pub fn check_parse(args: &CheckParseArgs) -> CedarExitCode {
-    match args.policies.get_policy_set() {
-        Ok(_) => CedarExitCode::Success,
-        Err(e) => {
-            println!("{e:?}");
-            CedarExitCode::Failure
         }
     }
 }
