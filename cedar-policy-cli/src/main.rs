@@ -20,9 +20,9 @@ use clap::Parser;
 use miette::ErrorHook;
 
 use cedar_policy_cli::{
-    authorize::authorize, check_parse::check_parse, evaluate::evaluate, format_policies, link, new,
-    translate_schema::translate_schema, validate::validate, CedarExitCode, Cli, Commands,
-    ErrorFormat,
+    authorize::authorize, check_parse::check_parse, evaluate::evaluate, format_policies,
+    link::link, new, translate_schema::translate_schema, validate::validate, CedarExitCode, Cli,
+    Commands, ErrorFormat,
 };
 
 fn main() -> CedarExitCode {
