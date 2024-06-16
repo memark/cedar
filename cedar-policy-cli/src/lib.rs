@@ -21,6 +21,7 @@
 
 use authorize::AuthorizeArgs;
 use clap::{ArgAction, Args, Parser, Subcommand, ValueEnum};
+use evaluate::EvaluateArgs;
 use miette::{miette, IntoDiagnostic, NamedSource, Report, Result, WrapErr};
 use serde::{Deserialize, Serialize};
 use std::io::Write;
@@ -39,6 +40,7 @@ use cedar_policy::*;
 use cedar_policy_formatter::{policies_str_to_pretty, Config};
 
 pub mod authorize;
+pub mod evaluate;
 pub mod translate_schema;
 
 /// Basic Cedar CLI for evaluating authorization queries
@@ -428,28 +430,6 @@ struct RequestJSON {
     context: serde_json::Value,
 }
 
-#[derive(Args, Debug)]
-pub struct EvaluateArgs {
-    /// Request args (incorporated by reference)
-    #[command(flatten)]
-    pub request: RequestArgs,
-    /// File containing schema information
-    /// Used to populate the store with action entities and for schema-based
-    /// parsing of entity hierarchy, if present
-    #[arg(short, long = "schema", value_name = "FILE")]
-    pub schema_file: Option<String>,
-    /// Schema format (Human-readable or JSON)
-    #[arg(long, value_enum, default_value_t = SchemaFormat::Human)]
-    pub schema_format: SchemaFormat,
-    /// File containing JSON representation of the Cedar entity hierarchy.
-    /// This is optional; if not present, we'll just use an empty hierarchy.
-    #[arg(long = "entities", value_name = "FILE")]
-    pub entities_file: Option<String>,
-    /// Expression to evaluate
-    #[arg(value_name = "EXPRESSION")]
-    pub expression: String,
-}
-
 #[derive(Eq, PartialEq, Debug)]
 pub enum CedarExitCode {
     // The command completed successfully with a result other than a
@@ -542,58 +522,6 @@ pub fn validate(args: &ValidateArgs) -> CedarExitCode {
             Report::new(result).wrap_err("policy set validation passed")
         );
         CedarExitCode::Success
-    }
-}
-
-pub fn evaluate(args: &EvaluateArgs) -> (CedarExitCode, EvalResult) {
-    println!();
-    let schema = match args
-        .schema_file
-        .as_ref()
-        .map(|f| read_schema_file(f, args.schema_format))
-    {
-        None => None,
-        Some(Ok(schema)) => Some(schema),
-        Some(Err(e)) => {
-            println!("{e:?}");
-            return (CedarExitCode::Failure, EvalResult::Bool(false));
-        }
-    };
-    let request = match args.request.get_request(schema.as_ref()) {
-        Ok(q) => q,
-        Err(e) => {
-            println!("{e:?}");
-            return (CedarExitCode::Failure, EvalResult::Bool(false));
-        }
-    };
-    let expr =
-        match Expression::from_str(&args.expression).wrap_err("failed to parse the expression") {
-            Ok(expr) => expr,
-            Err(e) => {
-                println!("{:?}", e.with_source_code(args.expression.clone()));
-                return (CedarExitCode::Failure, EvalResult::Bool(false));
-            }
-        };
-    let entities = match &args.entities_file {
-        None => Entities::empty(),
-        Some(file) => match load_entities(file, schema.as_ref()) {
-            Ok(entities) => entities,
-            Err(e) => {
-                println!("{e:?}");
-                return (CedarExitCode::Failure, EvalResult::Bool(false));
-            }
-        },
-    };
-    match eval_expression(&request, &entities, &expr).wrap_err("failed to evaluate the expression")
-    {
-        Err(e) => {
-            println!("{e:?}");
-            return (CedarExitCode::Failure, EvalResult::Bool(false));
-        }
-        Ok(result) => {
-            println!("{result}");
-            return (CedarExitCode::Success, result);
-        }
     }
 }
 
