@@ -19,6 +19,7 @@
 // omitted.
 #![allow(clippy::needless_return)]
 
+use authorize::AuthorizeArgs;
 use clap::{ArgAction, Args, Parser, Subcommand, ValueEnum};
 use miette::{miette, IntoDiagnostic, NamedSource, Report, Result, WrapErr};
 use serde::{Deserialize, Serialize};
@@ -37,6 +38,7 @@ use translate_schema::TranslateSchemaArgs;
 use cedar_policy::*;
 use cedar_policy_formatter::{policies_str_to_pretty, Config};
 
+pub mod authorize;
 pub mod translate_schema;
 
 /// Basic Cedar CLI for evaluating authorization queries
@@ -325,34 +327,6 @@ impl PoliciesArgs {
         }
         Ok(pset)
     }
-}
-
-#[derive(Args, Debug)]
-pub struct AuthorizeArgs {
-    /// Request args (incorporated by reference)
-    #[command(flatten)]
-    pub request: RequestArgs,
-    /// Policies args (incorporated by reference)
-    #[command(flatten)]
-    pub policies: PoliciesArgs,
-    /// File containing schema information
-    ///
-    /// Used to populate the store with action entities and for schema-based
-    /// parsing of entity hierarchy, if present
-    #[arg(short, long = "schema", value_name = "FILE")]
-    pub schema_file: Option<String>,
-    /// Schema format (Human-readable or JSON)
-    #[arg(long, value_enum, default_value_t = SchemaFormat::Human)]
-    pub schema_format: SchemaFormat,
-    /// File containing JSON representation of the Cedar entity hierarchy
-    #[arg(long = "entities", value_name = "FILE")]
-    pub entities_file: String,
-    /// More verbose output. (For instance, indicate which policies applied to the request, if any.)
-    #[arg(short, long)]
-    pub verbose: bool,
-    /// Time authorization and report timing information
-    #[arg(short, long)]
-    pub timing: bool,
 }
 
 #[derive(Clone, Copy, Debug, Default, Eq, PartialEq, ValueEnum)]
@@ -919,57 +893,6 @@ fn write_template_linked_file(linked: &[TemplateLinked], path: impl AsRef<Path>)
         .open(path)
         .into_diagnostic()?;
     serde_json::to_writer(f, linked).into_diagnostic()
-}
-
-pub fn authorize(args: &AuthorizeArgs) -> CedarExitCode {
-    println!();
-    let ans = execute_request(
-        &args.request,
-        &args.policies,
-        &args.entities_file,
-        args.schema_file.as_ref(),
-        args.schema_format,
-        args.timing,
-    );
-    match ans {
-        Ok(ans) => {
-            let status = match ans.decision() {
-                Decision::Allow => {
-                    println!("ALLOW");
-                    CedarExitCode::Success
-                }
-                Decision::Deny => {
-                    println!("DENY");
-                    CedarExitCode::AuthorizeDeny
-                }
-            };
-            if ans.diagnostics().errors().peekable().peek().is_some() {
-                println!();
-                for err in ans.diagnostics().errors() {
-                    println!("{err}");
-                }
-            }
-            if args.verbose {
-                println!();
-                if ans.diagnostics().reason().peekable().peek().is_none() {
-                    println!("note: no policies applied to this request");
-                } else {
-                    println!("note: this decision was due to the following policies:");
-                    for reason in ans.diagnostics().reason() {
-                        println!("  {}", reason);
-                    }
-                    println!();
-                }
-            }
-            status
-        }
-        Err(errs) => {
-            for err in errs {
-                println!("{err:?}");
-            }
-            CedarExitCode::Failure
-        }
-    }
 }
 
 /// Load an `Entities` object from the given JSON filename and optional schema.

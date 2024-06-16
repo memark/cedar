@@ -25,8 +25,9 @@ use cedar_policy::SlotId;
 use cedar_policy_cli::check_parse;
 use cedar_policy_cli::SchemaFormat;
 use cedar_policy_cli::{
-    authorize, evaluate, link, validate, Arguments, AuthorizeArgs, CedarExitCode, CheckParseArgs,
-    EvaluateArgs, LinkArgs, PoliciesArgs, PolicyFormat, RequestArgs, ValidateArgs,
+    authorize::authorize, authorize::AuthorizeArgs, evaluate, link, validate, Arguments,
+    CedarExitCode, CheckParseArgs, EvaluateArgs, LinkArgs, PoliciesArgs, PolicyFormat, RequestArgs,
+    ValidateArgs,
 };
 
 fn run_check_parse_test(policies_file: impl Into<String>, expected_exit_code: CedarExitCode) {
