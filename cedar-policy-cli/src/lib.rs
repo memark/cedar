@@ -309,34 +309,6 @@ pub enum PolicyFormat {
     Json,
 }
 
-/// Wrapper struct
-#[derive(Clone, Debug, Deserialize)]
-#[serde(try_from = "HashMap<String,String>")]
-pub struct Arguments {
-    pub data: HashMap<SlotId, String>,
-}
-
-impl TryFrom<HashMap<String, String>> for Arguments {
-    type Error = String;
-
-    fn try_from(value: HashMap<String, String>) -> Result<Self, Self::Error> {
-        Ok(Self {
-            data: value
-                .into_iter()
-                .map(|(k, v)| parse_slot_id(k).map(|slot_id| (slot_id, v)))
-                .collect::<Result<HashMap<SlotId, String>, String>>()?,
-        })
-    }
-}
-
-impl FromStr for Arguments {
-    type Err = serde_json::Error;
-
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
-        serde_json::from_str(s)
-    }
-}
-
 /// This struct is the serde structure expected for --request-json
 #[derive(Deserialize)]
 struct RequestJSON {

@@ -1,10 +1,14 @@
+use std::{collections::HashMap, str::FromStr};
+
+use crate::parse_slot_id;
+
 use super::{
-    create_slot_env, update_template_linked_file, Arguments, CedarExitCode, PoliciesArgs,
-    TemplateLinked,
+    create_slot_env, update_template_linked_file, CedarExitCode, PoliciesArgs, TemplateLinked,
 };
-use cedar_policy::PolicyId;
+use cedar_policy::{PolicyId, SlotId};
 use clap::{arg, Args};
 use miette::{miette, Result};
+use serde::Deserialize;
 
 #[derive(Args, Debug)]
 pub struct LinkArgs {
@@ -20,6 +24,34 @@ pub struct LinkArgs {
     /// Arguments to fill slots
     #[arg(short, long)]
     pub arguments: Arguments,
+}
+
+/// Wrapper struct
+#[derive(Clone, Debug, Deserialize)]
+#[serde(try_from = "HashMap<String,String>")]
+pub struct Arguments {
+    pub data: HashMap<SlotId, String>,
+}
+
+impl TryFrom<HashMap<String, String>> for Arguments {
+    type Error = String;
+
+    fn try_from(value: HashMap<String, String>) -> Result<Self, Self::Error> {
+        Ok(Self {
+            data: value
+                .into_iter()
+                .map(|(k, v)| parse_slot_id(k).map(|slot_id| (slot_id, v)))
+                .collect::<Result<HashMap<SlotId, String>, String>>()?,
+        })
+    }
+}
+
+impl FromStr for Arguments {
+    type Err = serde_json::Error;
+
+    fn from_str(s: &str) -> Result<Self, Self::Err> {
+        serde_json::from_str(s)
+    }
 }
 
 pub fn link(args: &LinkArgs) -> CedarExitCode {

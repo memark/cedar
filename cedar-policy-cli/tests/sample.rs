@@ -26,8 +26,9 @@ use cedar_policy_cli::check_parse::check_parse;
 use cedar_policy_cli::SchemaFormat;
 use cedar_policy_cli::{
     authorize::authorize, authorize::AuthorizeArgs, check_parse::CheckParseArgs,
-    evaluate::evaluate, evaluate::EvaluateArgs, link::link, link::LinkArgs, validate::validate,
-    validate::ValidateArgs, Arguments, CedarExitCode, PoliciesArgs, PolicyFormat, RequestArgs,
+    evaluate::evaluate, evaluate::EvaluateArgs, link::link, link::Arguments, link::LinkArgs,
+    validate::validate, validate::ValidateArgs, CedarExitCode, PoliciesArgs, PolicyFormat,
+    RequestArgs,
 };
 
 fn run_check_parse_test(policies_file: impl Into<String>, expected_exit_code: CedarExitCode) {
