@@ -26,8 +26,8 @@ use cedar_policy_cli::check_parse::check_parse;
 use cedar_policy_cli::SchemaFormat;
 use cedar_policy_cli::{
     authorize::authorize, authorize::AuthorizeArgs, check_parse::CheckParseArgs,
-    evaluate::evaluate, evaluate::EvaluateArgs, link, validate, Arguments, CedarExitCode, LinkArgs,
-    PoliciesArgs, PolicyFormat, RequestArgs, ValidateArgs,
+    evaluate::evaluate, evaluate::EvaluateArgs, link, validate::validate, validate::ValidateArgs,
+    Arguments, CedarExitCode, LinkArgs, PoliciesArgs, PolicyFormat, RequestArgs,
 };
 
 fn run_check_parse_test(policies_file: impl Into<String>, expected_exit_code: CedarExitCode) {
@@ -484,7 +484,7 @@ fn run_validate_test(
             template_linked_file: None,
         },
         deny_warnings: false,
-        validation_mode: cedar_policy_cli::ValidationMode::Strict,
+        validation_mode: cedar_policy_cli::validate::ValidationMode::Strict,
         schema_format: SchemaFormat::Json,
     };
     let output = validate(&cmd);
@@ -502,7 +502,7 @@ fn run_validate_test(
             template_linked_file: None,
         },
         deny_warnings: false,
-        validation_mode: cedar_policy_cli::ValidationMode::Strict,
+        validation_mode: cedar_policy_cli::validate::ValidationMode::Strict,
         schema_format: SchemaFormat::Human,
     };
     let output = validate(&cmd);
