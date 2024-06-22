@@ -7,44 +7,44 @@
     named_arguments_used_positionally
 )]
 
+use std::any;
 use std::env;
+use std::error::Error;
 use std::fs;
 use std::path::Path;
 use std::path::PathBuf;
 
-fn main() {
-    let out_dir = env::var("OUT_DIR").unwrap();
-    let temp = resolve_integration_test_path("corpus-tests");
-    let test_dir = temp.as_os_str().to_str().unwrap();
-    let mut test_cases = String::new();
+fn main() -> Result<(), Box<dyn Error>> {
+    let test_dir = resolve_integration_test_path("corpus-tests")
+        .into_os_string()
+        .into_string()
+        .unwrap();
 
-    for entry in fs::read_dir(test_dir).expect("Unable to read test directory") {
-        let entry = entry.expect("Unable to read directory entry");
-        let file_name = entry.file_name().into_string().expect("Invalid file name");
+    let test_cases = fs::read_dir(&test_dir)
+        .unwrap()
+        .map(|dir_entry_res| dir_entry_res.unwrap().file_name().into_string().unwrap())
+        .filter(|file_name| file_name.ends_with(".json") && !file_name.ends_with(".entities.json"))
+        .map(|file_name| {
+            let test_name = format!("test_{}", file_name.replace(".json", ""));
+            format!(
+                r#"
+                #[test]
+                #[ignore]
+                fn {test_name}() {{
+                    let file_path = "{test_dir}/{file_name}";
+                    perform_integration_test_from_json(file_path);
+                }}
+                "#,
+            )
+        })
+        .collect::<Vec<_>>()
+        .join("\n");
 
-        if !file_name.ends_with(".json") {
-            continue;
-        }
-        if file_name.ends_with(".entities.json") {
-            continue;
-        }
-
-        let test_name = format!("test_{}", file_name.replace('.', "_"));
-
-        test_cases.push_str(&format!(
-            r#"
-            #[test]
-            #[ignore]
-            fn {test_name}() {{
-                let file_path = "{test_dir}/{file_name}";
-                perform_integration_test_from_json(file_path);
-            }}
-            "#,
-        ));
-    }
-
+    let out_dir = env::var("OUT_DIR")?;
     let dest_path = Path::new(&out_dir).join("generated_tests.rs");
-    fs::write(&dest_path, test_cases).expect("Unable to write generated tests");
+
+    fs::write(dest_path, test_cases)?;
+    Ok(())
 }
 
 /// For relative paths, return the absolute path, assuming that the path
