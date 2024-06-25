@@ -20,23 +20,10 @@ fn main() -> Result<(), Box<dyn Error>> {
         .into_string()
         .unwrap();
 
-    let test_cases = fs::read_dir(&test_dir)
-        .unwrap()
+    let test_cases = fs::read_dir(&test_dir)?
         .map(|dir_entry_res| dir_entry_res.unwrap().file_name().into_string().unwrap())
         .filter(|file_name| file_name.ends_with(".json") && !file_name.ends_with(".entities.json"))
-        .map(|file_name| {
-            let test_name = format!("test_{}", file_name.replace(".json", ""));
-            format!(
-                r#"
-                #[test]
-                #[ignore]
-                fn {test_name}() {{
-                    let file_path = "{test_dir}/{file_name}";
-                    perform_integration_test_from_json(file_path);
-                }}
-                "#,
-            )
-        })
+        .map(|x| create_test_case(&test_dir, &x))
         .collect::<Vec<_>>()
         .join("\n");
 
@@ -45,6 +32,20 @@ fn main() -> Result<(), Box<dyn Error>> {
 
     fs::write(dest_path, test_cases)?;
     Ok(())
+}
+
+fn create_test_case(test_dir: &str, file_name: &str) -> String {
+    let test_name = format!("test_{}", file_name.replace(".json", ""));
+    format!(
+        r#"
+        #[test]
+        #[ignore]
+        fn {test_name}() {{
+            let file_path = "{test_dir}/{file_name}";
+            perform_integration_test_from_json(file_path);
+        }}
+        "#,
+    )
 }
 
 /// For relative paths, return the absolute path, assuming that the path
