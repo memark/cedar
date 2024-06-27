@@ -94,8 +94,7 @@ fn constant_true() -> bool {
     true
 }
 
-pub mod resolve_integration_test_path;
-use resolve_integration_test_path::resolve_integration_test_path;
+include!("resolve_integration_test_path.rs");
 
 /// Given a `JsonTest`, parse the provided policies file.
 /// # Panics
