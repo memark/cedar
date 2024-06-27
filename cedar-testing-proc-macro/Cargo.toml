@@ -1,0 +1,11 @@
+[package]
+name = "cedar-testing-proc-macro"
+edition = "2021"
+
+[dependencies]
+syn = "*"
+quote = "*"
+proc-macro2 = "*"
+
+[lib]
+proc-macro = true
