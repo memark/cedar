@@ -26,15 +26,21 @@ use std::path::PathBuf;
 
 #[rstest]
 #[ignore]
-fn corpus_tests(#[files("../cedar-integration-tests/corpus-tests/*.json")] filepath: PathBuf) {
-    if filepath
-        .file_name()
-        .unwrap()
-        .to_str()
-        .unwrap()
-        .ends_with(".entities.json")
-    {
-        return;
-    }
-    perform_integration_test_from_json(filepath);
+fn corpus_tests(
+    #[files("../cedar-integration-tests/corpus-tests/*.json")]
+    #[exclude(".entities.json")]
+    // #[files("src/**/*.rs")]
+    // #[exclude("test")]
+    path: PathBuf,
+) {
+    // if filepath
+    //     .file_name()
+    //     .unwrap()
+    //     .to_str()
+    //     .unwrap()
+    //     .ends_with(".entities.json")
+    // {
+    //     return;
+    // }
+    perform_integration_test_from_json(path);
 }
