@@ -1,0 +1,11 @@
+entity r;
+entity M3;
+entity EP;
+entity R;
+entity b;
+action "\u{1}9" appliesTo {
+  principal: [M3, EP, R, b, r],
+  resource: [M3, EP, R, b],
+  context: {}
+};
+

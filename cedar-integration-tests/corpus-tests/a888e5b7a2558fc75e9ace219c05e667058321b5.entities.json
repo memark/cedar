@@ -1,0 +1,38 @@
+[
+  {
+    "uid": {
+      "type": "a",
+      "id": "&aa"
+    },
+    "attrs": {
+      "uPhXXXCXg": [
+        -1
+      ]
+    },
+    "parents": []
+  },
+  {
+    "uid": {
+      "type": "a",
+      "id": ""
+    },
+    "attrs": {
+      "uPhXXXCXg": [
+        -1
+      ]
+    },
+    "parents": []
+  },
+  {
+    "uid": {
+      "type": "a",
+      "id": "a"
+    },
+    "attrs": {
+      "uPhXXXCXg": [
+        -1
+      ]
+    },
+    "parents": []
+  }
+]

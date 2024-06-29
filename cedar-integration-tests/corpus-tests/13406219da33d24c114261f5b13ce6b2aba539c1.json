@@ -1,0 +1,204 @@
+{
+  "policies": "corpus-tests/13406219da33d24c114261f5b13ce6b2aba539c1.cedar",
+  "entities": "corpus-tests/13406219da33d24c114261f5b13ce6b2aba539c1.entities.json",
+  "schema": "corpus-tests/13406219da33d24c114261f5b13ce6b2aba539c1.cedarschema",
+  "shouldValidate": true,
+  "requests": [
+    {
+      "description": "Request 0",
+      "principal": {
+        "type": "Key1::a",
+        "id": ""
+      },
+      "action": {
+        "type": "Key1::Action",
+        "id": "action"
+      },
+      "resource": {
+        "type": "Key1::a",
+        "id": ""
+      },
+      "context": {
+        "a": [
+          true
+        ]
+      },
+      "validateRequest": true,
+      "decision": "allow",
+      "reason": [
+        "policy0"
+      ],
+      "errors": []
+    },
+    {
+      "description": "Request 1",
+      "principal": {
+        "type": "Key1::a",
+        "id": ""
+      },
+      "action": {
+        "type": "Key1::Action",
+        "id": "action"
+      },
+      "resource": {
+        "type": "Key1::a",
+        "id": ""
+      },
+      "context": {
+        "a": [
+          false
+        ]
+      },
+      "validateRequest": true,
+      "decision": "allow",
+      "reason": [
+        "policy0"
+      ],
+      "errors": []
+    },
+    {
+      "description": "Request 2",
+      "principal": {
+        "type": "Key1::a",
+        "id": ""
+      },
+      "action": {
+        "type": "Key1::Action",
+        "id": "action"
+      },
+      "resource": {
+        "type": "Key1::a",
+        "id": ""
+      },
+      "context": {
+        "a": []
+      },
+      "validateRequest": true,
+      "decision": "allow",
+      "reason": [
+        "policy0"
+      ],
+      "errors": []
+    },
+    {
+      "description": "Request 3",
+      "principal": {
+        "type": "Key1::a",
+        "id": ""
+      },
+      "action": {
+        "type": "Key1::Action",
+        "id": "action"
+      },
+      "resource": {
+        "type": "Key1::a",
+        "id": ""
+      },
+      "context": {
+        "a": []
+      },
+      "validateRequest": true,
+      "decision": "allow",
+      "reason": [
+        "policy0"
+      ],
+      "errors": []
+    },
+    {
+      "description": "Request 4",
+      "principal": {
+        "type": "Key1::a",
+        "id": ""
+      },
+      "action": {
+        "type": "Key1::Action",
+        "id": "action"
+      },
+      "resource": {
+        "type": "Key1::a",
+        "id": ""
+      },
+      "context": {
+        "a": []
+      },
+      "validateRequest": true,
+      "decision": "allow",
+      "reason": [
+        "policy0"
+      ],
+      "errors": []
+    },
+    {
+      "description": "Request 5",
+      "principal": {
+        "type": "Key1::a",
+        "id": ""
+      },
+      "action": {
+        "type": "Key1::Action",
+        "id": "action"
+      },
+      "resource": {
+        "type": "Key1::a",
+        "id": ""
+      },
+      "context": {
+        "a": []
+      },
+      "validateRequest": true,
+      "decision": "allow",
+      "reason": [
+        "policy0"
+      ],
+      "errors": []
+    },
+    {
+      "description": "Request 6",
+      "principal": {
+        "type": "Key1::a",
+        "id": ""
+      },
+      "action": {
+        "type": "Key1::Action",
+        "id": "action"
+      },
+      "resource": {
+        "type": "Key1::a",
+        "id": ""
+      },
+      "context": {
+        "a": []
+      },
+      "validateRequest": true,
+      "decision": "allow",
+      "reason": [
+        "policy0"
+      ],
+      "errors": []
+    },
+    {
+      "description": "Request 7",
+      "principal": {
+        "type": "Key1::a",
+        "id": ""
+      },
+      "action": {
+        "type": "Key1::Action",
+        "id": "action"
+      },
+      "resource": {
+        "type": "Key1::a",
+        "id": ""
+      },
+      "context": {
+        "a": []
+      },
+      "validateRequest": true,
+      "decision": "allow",
+      "reason": [
+        "policy0"
+      ],
+      "errors": []
+    }
+  ]
+}

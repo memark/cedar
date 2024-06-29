@@ -1,0 +1,11 @@
+namespace r::r::F::r::U::A {
+entity B in [J];
+entity r in [J];
+entity A in [B, r, J];
+entity J;
+action "" appliesTo {
+  principal: [A, B, r, J],
+  resource: [B, r, J],
+  context: {}
+};
+}

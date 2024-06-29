@@ -1,0 +1,7 @@
+entity Gm6mnz002m;
+action "," appliesTo {
+  principal: [Gm6mnz002m],
+  resource: [Gm6mnz002m],
+  context: {}
+};
+

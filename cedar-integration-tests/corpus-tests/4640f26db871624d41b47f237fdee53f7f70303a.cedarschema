@@ -1,0 +1,7 @@
+entity a = {"AS2SSS": a};
+action "action" appliesTo {
+  principal: [a],
+  resource: [a],
+  context: {}
+};
+

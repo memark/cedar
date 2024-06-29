@@ -1,0 +1,7 @@
+entity a;
+action "444<44" appliesTo {
+  principal: [a],
+  resource: [a],
+  context: {}
+};
+

@@ -1,0 +1,40 @@
+[
+  {
+    "uid": {
+      "type": "A::a",
+      "id": "3"
+    },
+    "attrs": {
+      "QZ": 0,
+      "A": {
+        "__entity": {
+          "type": "A::a",
+          "id": ""
+        }
+      },
+      "j": 0,
+      "fZ": false,
+      "q3": ""
+    },
+    "parents": []
+  },
+  {
+    "uid": {
+      "type": "A::a",
+      "id": ""
+    },
+    "attrs": {
+      "QZ": 0,
+      "fZ": false,
+      "A": {
+        "__entity": {
+          "type": "A::a",
+          "id": ""
+        }
+      },
+      "j": 0,
+      "q3": ""
+    },
+    "parents": []
+  }
+]

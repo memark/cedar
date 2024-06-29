@@ -1,0 +1,7 @@
+entity a = {"s"?: {""?: __cedar::Long, "\0link_id"?: {}, "\u{1}"?: __cedar::Long, "4": {}}};
+action "action" appliesTo {
+  principal: [a],
+  resource: [a],
+  context: {}
+};
+

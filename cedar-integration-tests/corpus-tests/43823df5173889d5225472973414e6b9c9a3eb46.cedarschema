@@ -1,0 +1,7 @@
+entity a = {"_ssu"?: {}, "hFWpn"?: {}, "qqamncTUI"?: {}};
+action "action" appliesTo {
+  principal: [a],
+  resource: [a],
+  context: {}
+};
+

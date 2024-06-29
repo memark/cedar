@@ -1,0 +1,7 @@
+entity a = {"Yn": __cedar::Long};
+action "47;" appliesTo {
+  principal: [a],
+  resource: [a],
+  context: {}
+};
+

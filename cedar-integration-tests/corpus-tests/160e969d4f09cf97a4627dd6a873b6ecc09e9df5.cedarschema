@@ -1,0 +1,8 @@
+namespace G::A::E::A {
+entity a;
+action "action" appliesTo {
+  principal: [a],
+  resource: [a],
+  context: {}
+};
+}

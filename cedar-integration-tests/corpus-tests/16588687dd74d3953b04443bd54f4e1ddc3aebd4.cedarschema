@@ -1,0 +1,9 @@
+namespace ld7777df877u7 {
+entity A in [r37777777];
+entity r37777777;
+action "" appliesTo {
+  principal: [A, r37777777],
+  resource: [A, r37777777],
+  context: {}
+};
+}

@@ -1,0 +1,8 @@
+namespace l {
+entity a;
+action "action" appliesTo {
+  principal: [a],
+  resource: [a],
+  context: {"r"?: {""?: __cedar::String, "\0\0"?: __cedar::String, ";"?: __cedar::String, "empl"?: __cedar::String, "tt"?: __cedar::String}}
+};
+}

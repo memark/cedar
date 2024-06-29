@@ -1,0 +1,9 @@
+namespace l {
+entity r in [lJ7_301000];
+entity lJ7_301000;
+action "" appliesTo {
+  principal: [r, lJ7_301000],
+  resource: [r],
+  context: {"r"?: __cedar::String}
+};
+}

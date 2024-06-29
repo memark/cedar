@@ -1,0 +1,7 @@
+entity a = {"Yo": {""?: {}, "*<}\u{6}<<"?: {}}};
+action "action" appliesTo {
+  principal: [a],
+  resource: [a],
+  context: {}
+};
+

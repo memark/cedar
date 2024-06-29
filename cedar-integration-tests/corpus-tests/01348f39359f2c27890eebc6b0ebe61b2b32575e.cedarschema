@@ -1,0 +1,8 @@
+namespace r::H33::r::Hqq::W::r {
+entity a;
+action "action" appliesTo {
+  principal: [a],
+  resource: [a],
+  context: {}
+};
+}

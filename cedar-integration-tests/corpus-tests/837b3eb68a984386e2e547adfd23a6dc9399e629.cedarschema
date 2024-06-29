@@ -1,0 +1,10 @@
+entity a;
+action "";
+action "opt" appliesTo {
+  principal: [a],
+  resource: [a],
+  context: {}
+};
+action "n";
+action "_s";
+

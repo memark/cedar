@@ -1,0 +1,8 @@
+entity sWg003 = {"r": __cedar::Long};
+action "otc";
+action "" appliesTo {
+  principal: [sWg003],
+  resource: [sWg003],
+  context: {}
+};
+

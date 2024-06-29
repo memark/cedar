@@ -1,0 +1,14 @@
+namespace W::G3t {
+entity A8;
+entity uXXX in [A8];
+action "\u{6}" appliesTo {
+  principal: [uXXX, A8],
+  resource: [uXXX, A8],
+  context: {}
+};
+action "v1" appliesTo {
+  principal: [uXXX, A8],
+  resource: [uXXX, A8],
+  context: {}
+};
+}

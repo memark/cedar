@@ -1,0 +1,8 @@
+namespace r::A4::Hx777700X7777373 {
+entity a;
+action "" appliesTo {
+  principal: [a],
+  resource: [a],
+  context: {"A"?: __cedar::String, "G"?: __cedar::String}
+};
+}

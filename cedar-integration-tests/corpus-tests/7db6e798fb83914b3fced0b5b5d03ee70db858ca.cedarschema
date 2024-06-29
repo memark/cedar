@@ -1,0 +1,8 @@
+namespace A {
+entity a = {"A": A::a, "QZ": __cedar::Long, "fZ"?: __cedar::Bool, "j"?: __cedar::Long, "q3"?: __cedar::String};
+action "action" appliesTo {
+  principal: [a],
+  resource: [a],
+  context: {"z"?: __cedar::String}
+};
+}

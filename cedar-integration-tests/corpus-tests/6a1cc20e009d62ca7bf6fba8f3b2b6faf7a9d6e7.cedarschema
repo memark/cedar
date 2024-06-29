@@ -1,0 +1,8 @@
+namespace l {
+entity a = {"r"?: {"": {"\0\u{7f}\0"?: Set < __cedar::String >, "Ą": __cedar::String}}};
+action "action" appliesTo {
+  principal: [a],
+  resource: [a],
+  context: {}
+};
+}

@@ -1,0 +1,8 @@
+namespace EmrYrgml8 {
+entity a;
+action "" appliesTo {
+  principal: [a],
+  resource: [a],
+  context: {}
+};
+}

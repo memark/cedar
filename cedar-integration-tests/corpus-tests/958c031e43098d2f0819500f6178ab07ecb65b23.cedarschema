@@ -1,0 +1,10 @@
+namespace r::r::r::r {
+entity r in [K];
+entity K = {"A"?: __cedar::String};
+entity GjYra0mm in [r, K];
+action "action" appliesTo {
+  principal: [GjYra0mm, r, K],
+  resource: [GjYra0mm, r, K],
+  context: {}
+};
+}

@@ -1,0 +1,11 @@
+entity a;
+action "88&";
+action "4:]8" appliesTo {
+  principal: [a],
+  resource: [a],
+  context: {}
+};
+action "42";
+action "4424<44";
+action "";
+

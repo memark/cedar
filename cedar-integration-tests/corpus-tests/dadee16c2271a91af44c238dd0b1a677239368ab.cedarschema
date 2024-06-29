@@ -1,0 +1,7 @@
+entity a;
+action "" appliesTo {
+  principal: [a],
+  resource: [a],
+  context: {"k0": Set < __cedar::Long >}
+};
+

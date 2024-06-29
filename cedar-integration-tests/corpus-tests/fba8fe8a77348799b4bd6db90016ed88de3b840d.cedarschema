@@ -1,0 +1,8 @@
+namespace k64A03C00::wagqgml777310666 {
+entity a;
+action "action" appliesTo {
+  principal: [a],
+  resource: [a],
+  context: {}
+};
+}

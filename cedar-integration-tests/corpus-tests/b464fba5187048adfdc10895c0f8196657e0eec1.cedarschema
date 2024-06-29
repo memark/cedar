@@ -1,0 +1,15 @@
+entity a;
+action "%pl" appliesTo {
+  principal: [a],
+  resource: [a],
+  context: {}
+};
+action "+";
+action "";
+action "\u{1}";
+action ";;&;";
+action "3";
+action "\u{1}+";
+action ";";
+action "@3";
+

@@ -1,0 +1,8 @@
+namespace l {
+entity a;
+action "action" appliesTo {
+  principal: [a],
+  resource: [a],
+  context: {"A": l::a, "J133301"?: l::a, "R": l::a, "r": l::a, "r_": l::a}
+};
+}

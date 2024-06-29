@@ -1,0 +1,78 @@
+[
+  {
+    "uid": {
+      "type": "a",
+      "id": ""
+    },
+    "attrs": {
+      "d": "",
+      "F": [],
+      "n": false,
+      "A": {
+        "__entity": {
+          "type": "a",
+          "id": ""
+        }
+      },
+      "KX": {}
+    },
+    "parents": []
+  },
+  {
+    "uid": {
+      "type": "a",
+      "id": "m"
+    },
+    "attrs": {
+      "A": {
+        "__entity": {
+          "type": "a",
+          "id": ""
+        }
+      },
+      "KX": {},
+      "d": "",
+      "n": false,
+      "F": []
+    },
+    "parents": []
+  },
+  {
+    "uid": {
+      "type": "a",
+      "id": "pl"
+    },
+    "attrs": {
+      "F": [],
+      "d": "",
+      "A": {
+        "__entity": {
+          "type": "a",
+          "id": ""
+        }
+      },
+      "n": false,
+      "KX": {}
+    },
+    "parents": []
+  },
+  {
+    "uid": {
+      "type": "a",
+      "id": "e"
+    },
+    "attrs": {
+      "n": false,
+      "F": [],
+      "KX": {},
+      "A": {
+        "__entity": {
+          "type": "a",
+          "id": ""
+        }
+      },
+      "d": ""
+    },
+    "parents": []
+  }
+]

@@ -1,0 +1,9 @@
+entity MHAXXXXXwXXXXXXXX;
+entity KX in [MHAXXXXXwXXXXXXXX];
+entity A in [KX, MHAXXXXXwXXXXXXXX];
+action "action" appliesTo {
+  principal: [A, KX, MHAXXXXXwXXXXXXXX],
+  resource: [A, KX, MHAXXXXXwXXXXXXXX],
+  context: {}
+};
+

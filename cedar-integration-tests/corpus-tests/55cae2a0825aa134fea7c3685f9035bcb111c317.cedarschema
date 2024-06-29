@@ -1,0 +1,7 @@
+entity a = {"r": {"": {""?: {"\0\u{7f}\0"?: Set < __cedar::Long >}}}};
+action "action" appliesTo {
+  principal: [a],
+  resource: [a],
+  context: {}
+};
+

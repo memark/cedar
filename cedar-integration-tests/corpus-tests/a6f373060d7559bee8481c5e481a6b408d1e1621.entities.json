@@ -1,0 +1,110 @@
+[
+  {
+    "uid": {
+      "type": "FHw33X",
+      "id": "\u0001\u0001\u0002"
+    },
+    "attrs": {},
+    "parents": []
+  },
+  {
+    "uid": {
+      "type": "FHw33X",
+      "id": "Ċ"
+    },
+    "attrs": {},
+    "parents": []
+  },
+  {
+    "uid": {
+      "type": "FHw33X",
+      "id": ""
+    },
+    "attrs": {},
+    "parents": []
+  },
+  {
+    "uid": {
+      "type": "r",
+      "id": "\u0000q\u0000\u0000\u0000\u0000\u0000\u0001"
+    },
+    "attrs": {},
+    "parents": [
+      {
+        "type": "FHw33X",
+        "id": ""
+      },
+      {
+        "type": "FHw33X",
+        "id": "Ċ"
+      },
+      {
+        "type": "FHw33X",
+        "id": "\u0001\u0001\u0002"
+      }
+    ]
+  },
+  {
+    "uid": {
+      "type": "r",
+      "id": "@"
+    },
+    "attrs": {},
+    "parents": [
+      {
+        "type": "FHw33X",
+        "id": "\u0001\u0001\u0002"
+      },
+      {
+        "type": "FHw33X",
+        "id": ""
+      },
+      {
+        "type": "FHw33X",
+        "id": "Ċ"
+      }
+    ]
+  },
+  {
+    "uid": {
+      "type": "r",
+      "id": ""
+    },
+    "attrs": {},
+    "parents": [
+      {
+        "type": "FHw33X",
+        "id": ""
+      },
+      {
+        "type": "FHw33X",
+        "id": "\u0001\u0001\u0002"
+      },
+      {
+        "type": "FHw33X",
+        "id": "Ċ"
+      }
+    ]
+  },
+  {
+    "uid": {
+      "type": "r",
+      "id": "&"
+    },
+    "attrs": {},
+    "parents": [
+      {
+        "type": "FHw33X",
+        "id": "\u0001\u0001\u0002"
+      },
+      {
+        "type": "FHw33X",
+        "id": ""
+      },
+      {
+        "type": "FHw33X",
+        "id": "Ċ"
+      }
+    ]
+  }
+]

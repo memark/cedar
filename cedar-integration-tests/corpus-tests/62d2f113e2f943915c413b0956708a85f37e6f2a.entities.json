@@ -1,0 +1,34 @@
+[
+  {
+    "uid": {
+      "type": "rtu",
+      "id": ""
+    },
+    "attrs": {},
+    "parents": []
+  },
+  {
+    "uid": {
+      "type": "Dhuu0300",
+      "id": ""
+    },
+    "attrs": {},
+    "parents": []
+  },
+  {
+    "uid": {
+      "type": "r33",
+      "id": ""
+    },
+    "attrs": {},
+    "parents": []
+  },
+  {
+    "uid": {
+      "type": "w",
+      "id": ""
+    },
+    "attrs": {},
+    "parents": []
+  }
+]

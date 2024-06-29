@@ -1,0 +1,8 @@
+entity a = {"p": Set < __cedar::decimal >, "r"?: __cedar::String};
+action "83";
+action "88" appliesTo {
+  principal: [a],
+  resource: [a],
+  context: {"mog00000000000"?: __cedar::String}
+};
+

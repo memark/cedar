@@ -1,0 +1,8 @@
+entity LKw0gXlmlXXXWq0;
+entity rmmmmmwm6tmm in [LKw0gXlmlXXXWq0];
+action "action" appliesTo {
+  principal: [rmmmmmwm6tmm, LKw0gXlmlXXXWq0],
+  resource: [rmmmmmwm6tmm, LKw0gXlmlXXXWq0],
+  context: {}
+};
+

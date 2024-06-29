@@ -1,0 +1,7 @@
+entity a = {"sqqyqs"?: {}};
+action "action" appliesTo {
+  principal: [a],
+  resource: [a],
+  context: {"_q"?: __cedar::Bool}
+};
+

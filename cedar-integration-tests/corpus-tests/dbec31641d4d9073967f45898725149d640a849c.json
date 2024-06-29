@@ -1,0 +1,288 @@
+{
+  "policies": "corpus-tests/dbec31641d4d9073967f45898725149d640a849c.cedar",
+  "entities": "corpus-tests/dbec31641d4d9073967f45898725149d640a849c.entities.json",
+  "schema": "corpus-tests/dbec31641d4d9073967f45898725149d640a849c.cedarschema",
+  "shouldValidate": true,
+  "requests": [
+    {
+      "description": "Request 0",
+      "principal": {
+        "type": "l::a",
+        "id": ""
+      },
+      "action": {
+        "type": "l::Action",
+        "id": "action"
+      },
+      "resource": {
+        "type": "l::a",
+        "id": ""
+      },
+      "context": {
+        "n_31y3Z3o3D31": {
+          "__entity": {
+            "type": "l::a",
+            "id": ""
+          }
+        },
+        "r": {
+          "__entity": {
+            "type": "l::a",
+            "id": ""
+          }
+        }
+      },
+      "validateRequest": true,
+      "decision": "allow",
+      "reason": [
+        "policy0"
+      ],
+      "errors": []
+    },
+    {
+      "description": "Request 1",
+      "principal": {
+        "type": "l::a",
+        "id": ""
+      },
+      "action": {
+        "type": "l::Action",
+        "id": "action"
+      },
+      "resource": {
+        "type": "l::a",
+        "id": ""
+      },
+      "context": {
+        "n_31y3Z3o3D31": {
+          "__entity": {
+            "type": "l::a",
+            "id": ""
+          }
+        },
+        "r": {
+          "__entity": {
+            "type": "l::a",
+            "id": ""
+          }
+        }
+      },
+      "validateRequest": true,
+      "decision": "allow",
+      "reason": [
+        "policy0"
+      ],
+      "errors": []
+    },
+    {
+      "description": "Request 2",
+      "principal": {
+        "type": "l::a",
+        "id": ""
+      },
+      "action": {
+        "type": "l::Action",
+        "id": "action"
+      },
+      "resource": {
+        "type": "l::a",
+        "id": ""
+      },
+      "context": {
+        "n_31y3Z3o3D31": {
+          "__entity": {
+            "type": "l::a",
+            "id": ""
+          }
+        },
+        "r": {
+          "__entity": {
+            "type": "l::a",
+            "id": ""
+          }
+        }
+      },
+      "validateRequest": true,
+      "decision": "allow",
+      "reason": [
+        "policy0"
+      ],
+      "errors": []
+    },
+    {
+      "description": "Request 3",
+      "principal": {
+        "type": "l::a",
+        "id": ""
+      },
+      "action": {
+        "type": "l::Action",
+        "id": "action"
+      },
+      "resource": {
+        "type": "l::a",
+        "id": ""
+      },
+      "context": {
+        "n_31y3Z3o3D31": {
+          "__entity": {
+            "type": "l::a",
+            "id": ""
+          }
+        },
+        "r": {
+          "__entity": {
+            "type": "l::a",
+            "id": ""
+          }
+        }
+      },
+      "validateRequest": true,
+      "decision": "allow",
+      "reason": [
+        "policy0"
+      ],
+      "errors": []
+    },
+    {
+      "description": "Request 4",
+      "principal": {
+        "type": "l::a",
+        "id": ""
+      },
+      "action": {
+        "type": "l::Action",
+        "id": "action"
+      },
+      "resource": {
+        "type": "l::a",
+        "id": ""
+      },
+      "context": {
+        "n_31y3Z3o3D31": {
+          "__entity": {
+            "type": "l::a",
+            "id": ""
+          }
+        },
+        "r": {
+          "__entity": {
+            "type": "l::a",
+            "id": ""
+          }
+        }
+      },
+      "validateRequest": true,
+      "decision": "allow",
+      "reason": [
+        "policy0"
+      ],
+      "errors": []
+    },
+    {
+      "description": "Request 5",
+      "principal": {
+        "type": "l::a",
+        "id": ""
+      },
+      "action": {
+        "type": "l::Action",
+        "id": "action"
+      },
+      "resource": {
+        "type": "l::a",
+        "id": ""
+      },
+      "context": {
+        "n_31y3Z3o3D31": {
+          "__entity": {
+            "type": "l::a",
+            "id": ""
+          }
+        },
+        "r": {
+          "__entity": {
+            "type": "l::a",
+            "id": ""
+          }
+        }
+      },
+      "validateRequest": true,
+      "decision": "allow",
+      "reason": [
+        "policy0"
+      ],
+      "errors": []
+    },
+    {
+      "description": "Request 6",
+      "principal": {
+        "type": "l::a",
+        "id": ""
+      },
+      "action": {
+        "type": "l::Action",
+        "id": "action"
+      },
+      "resource": {
+        "type": "l::a",
+        "id": ""
+      },
+      "context": {
+        "n_31y3Z3o3D31": {
+          "__entity": {
+            "type": "l::a",
+            "id": ""
+          }
+        },
+        "r": {
+          "__entity": {
+            "type": "l::a",
+            "id": ""
+          }
+        }
+      },
+      "validateRequest": true,
+      "decision": "allow",
+      "reason": [
+        "policy0"
+      ],
+      "errors": []
+    },
+    {
+      "description": "Request 7",
+      "principal": {
+        "type": "l::a",
+        "id": ""
+      },
+      "action": {
+        "type": "l::Action",
+        "id": "action"
+      },
+      "resource": {
+        "type": "l::a",
+        "id": ""
+      },
+      "context": {
+        "n_31y3Z3o3D31": {
+          "__entity": {
+            "type": "l::a",
+            "id": ""
+          }
+        },
+        "r": {
+          "__entity": {
+            "type": "l::a",
+            "id": ""
+          }
+        }
+      },
+      "validateRequest": true,
+      "decision": "allow",
+      "reason": [
+        "policy0"
+      ],
+      "errors": []
+    }
+  ]
+}

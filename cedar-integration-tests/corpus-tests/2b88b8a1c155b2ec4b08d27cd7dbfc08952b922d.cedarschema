@@ -1,0 +1,7 @@
+entity KmX = {"KX": __cedar::Long, "r": __cedar::Long};
+action "!" appliesTo {
+  principal: [KmX],
+  resource: [KmX],
+  context: {}
+};
+

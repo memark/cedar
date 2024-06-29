@@ -1,0 +1,8 @@
+namespace P3m0m {
+entity a = {"Fmmmm"?: __cedar::ipaddr, "P"?: __cedar::ipaddr};
+action "action" appliesTo {
+  principal: [a],
+  resource: [a],
+  context: {}
+};
+}

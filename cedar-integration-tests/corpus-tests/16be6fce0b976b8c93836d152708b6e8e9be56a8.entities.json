@@ -1,0 +1,38 @@
+[
+  {
+    "uid": {
+      "type": "v",
+      "id": ""
+    },
+    "attrs": {
+      "b": {
+        "__entity": {
+          "type": "v",
+          "id": ""
+        }
+      },
+      "d": false,
+      "KX": "",
+      "r": []
+    },
+    "parents": []
+  },
+  {
+    "uid": {
+      "type": "v",
+      "id": "vB"
+    },
+    "attrs": {
+      "KX": "",
+      "r": [],
+      "b": {
+        "__entity": {
+          "type": "v",
+          "id": ""
+        }
+      },
+      "d": false
+    },
+    "parents": []
+  }
+]

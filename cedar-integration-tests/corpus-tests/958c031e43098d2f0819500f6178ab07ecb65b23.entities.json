@@ -1,0 +1,42 @@
+[
+  {
+    "uid": {
+      "type": "r::r::r::r::K",
+      "id": ""
+    },
+    "attrs": {
+      "A": ""
+    },
+    "parents": []
+  },
+  {
+    "uid": {
+      "type": "r::r::r::r::GjYra0mm",
+      "id": ""
+    },
+    "attrs": {},
+    "parents": [
+      {
+        "type": "r::r::r::r::K",
+        "id": ""
+      },
+      {
+        "type": "r::r::r::r::r",
+        "id": ""
+      }
+    ]
+  },
+  {
+    "uid": {
+      "type": "r::r::r::r::r",
+      "id": ""
+    },
+    "attrs": {},
+    "parents": [
+      {
+        "type": "r::r::r::r::K",
+        "id": ""
+      }
+    ]
+  }
+]

@@ -1,0 +1,8 @@
+namespace l {
+entity a = {"EqLdq": {}};
+action "\u{16}" appliesTo {
+  principal: [a],
+  resource: [a],
+  context: {}
+};
+}

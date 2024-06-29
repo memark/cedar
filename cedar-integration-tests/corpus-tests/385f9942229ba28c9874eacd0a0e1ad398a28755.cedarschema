@@ -1,0 +1,13 @@
+namespace l {
+entity a;
+action "4" appliesTo {
+  principal: [a],
+  resource: [a],
+  context: {}
+};
+action "44.." appliesTo {
+  principal: [a],
+  resource: [a],
+  context: {}
+};
+}

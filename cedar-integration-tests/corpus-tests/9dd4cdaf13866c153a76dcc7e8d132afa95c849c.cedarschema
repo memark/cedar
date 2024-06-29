@@ -1,0 +1,8 @@
+entity VLxLL;
+entity PLqqr in [VLxLL];
+action "action" appliesTo {
+  principal: [PLqqr, VLxLL],
+  resource: [PLqqr, VLxLL],
+  context: {}
+};
+

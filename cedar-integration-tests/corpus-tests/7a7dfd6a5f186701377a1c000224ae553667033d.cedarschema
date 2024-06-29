@@ -1,0 +1,9 @@
+entity Dhu1AA in [r33333];
+entity oNuu333q in [r33333];
+entity r33333;
+action "action" appliesTo {
+  principal: [oNuu333q, Dhu1AA, r33333],
+  resource: [oNuu333q, Dhu1AA, r33333],
+  context: {}
+};
+

@@ -1,0 +1,7 @@
+entity a = {"nF777dF77y": {""?: {}}};
+action "action" appliesTo {
+  principal: [a],
+  resource: [a],
+  context: {}
+};
+

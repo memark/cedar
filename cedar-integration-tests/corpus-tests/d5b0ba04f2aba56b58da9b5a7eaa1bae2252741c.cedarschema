@@ -1,0 +1,8 @@
+entity _X;
+entity MAXXXXXwXXXXXXXXX in [_X];
+action "action" appliesTo {
+  principal: [MAXXXXXwXXXXXXXXX, _X],
+  resource: [MAXXXXXwXXXXXXXXX, _X],
+  context: {"A"?: __cedar::String}
+};
+

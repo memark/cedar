@@ -1,0 +1,8 @@
+entity r in [KttZ0us];
+entity KttZ0us;
+action "action" appliesTo {
+  principal: [r, KttZ0us],
+  resource: [r, KttZ0us],
+  context: {}
+};
+

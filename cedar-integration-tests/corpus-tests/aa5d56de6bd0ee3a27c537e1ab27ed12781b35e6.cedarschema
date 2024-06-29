@@ -1,0 +1,10 @@
+entity r3333 in [Pm3s6, j];
+entity j;
+entity PmJIf in [r3333, Pm3s6, j];
+entity Pm3s6 in [j];
+action "action" appliesTo {
+  principal: [PmJIf, r3333, Pm3s6, j],
+  resource: [PmJIf, r3333, Pm3s6, j],
+  context: {}
+};
+

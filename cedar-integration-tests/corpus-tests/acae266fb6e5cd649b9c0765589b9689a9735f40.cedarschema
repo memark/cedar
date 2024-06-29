@@ -1,0 +1,8 @@
+entity rt in [M333o33] = {"F": __cedar::Long, "K": __cedar::Long, "r": __cedar::Long};
+entity M333o33;
+action "action" appliesTo {
+  principal: [rt, M333o33],
+  resource: [rt, M333o33],
+  context: {}
+};
+

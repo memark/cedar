@@ -1,0 +1,8 @@
+namespace Es3_1nxug5::g {
+entity a = {"K"?: __cedar::Bool, "wuKO"?: __cedar::Bool};
+action "action" appliesTo {
+  principal: [a],
+  resource: [a],
+  context: {}
+};
+}

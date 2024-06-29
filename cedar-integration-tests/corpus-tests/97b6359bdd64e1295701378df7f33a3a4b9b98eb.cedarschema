@@ -1,0 +1,7 @@
+entity a = {"_"?: Set < {"z"?: __cedar::String, "{"?: a} >};
+action "action" appliesTo {
+  principal: [a],
+  resource: [a],
+  context: {}
+};
+

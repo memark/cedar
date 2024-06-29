@@ -1,0 +1,8 @@
+entity P9mmJ in [cmIII9mkmrmmmm];
+entity cmIII9mkmrmmmm;
+action "ym\u{8}" appliesTo {
+  principal: [P9mmJ, cmIII9mkmrmmmm],
+  resource: [P9mmJ, cmIII9mkmrmmmm],
+  context: {}
+};
+

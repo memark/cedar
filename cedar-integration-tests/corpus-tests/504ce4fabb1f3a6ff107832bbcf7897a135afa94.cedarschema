@@ -1,0 +1,7 @@
+entity a;
+action "action" appliesTo {
+  principal: [a],
+  resource: [a],
+  context: {"A": {}, "r"?: {}, "r33133"?: {}, "r3333233I31A3333"?: {}}
+};
+

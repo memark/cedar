@@ -1,0 +1,8 @@
+entity k;
+entity umlrT in [k];
+action "action" appliesTo {
+  principal: [umlrT, k],
+  resource: [umlrT, k],
+  context: {}
+};
+

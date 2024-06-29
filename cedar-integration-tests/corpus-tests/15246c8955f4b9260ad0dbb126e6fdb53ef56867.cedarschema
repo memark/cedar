@@ -1,0 +1,9 @@
+namespace A0X10000004 {
+entity A in [Wv7XH10000cX];
+entity Wv7XH10000cX;
+action "action" appliesTo {
+  principal: [A, Wv7XH10000cX],
+  resource: [A, Wv7XH10000cX],
+  context: {}
+};
+}

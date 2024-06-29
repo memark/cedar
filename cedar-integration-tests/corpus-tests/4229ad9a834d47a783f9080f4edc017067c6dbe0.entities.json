@@ -1,0 +1,82 @@
+[
+  {
+    "uid": {
+      "type": "b",
+      "id": ""
+    },
+    "attrs": {},
+    "parents": [
+      {
+        "type": "r",
+        "id": ""
+      }
+    ]
+  },
+  {
+    "uid": {
+      "type": "EP",
+      "id": ""
+    },
+    "attrs": {},
+    "parents": [
+      {
+        "type": "b",
+        "id": ""
+      },
+      {
+        "type": "r",
+        "id": ""
+      },
+      {
+        "type": "R",
+        "id": ""
+      }
+    ]
+  },
+  {
+    "uid": {
+      "type": "M3",
+      "id": ""
+    },
+    "attrs": {},
+    "parents": [
+      {
+        "type": "r",
+        "id": ""
+      },
+      {
+        "type": "b",
+        "id": ""
+      },
+      {
+        "type": "R",
+        "id": ""
+      }
+    ]
+  },
+  {
+    "uid": {
+      "type": "r",
+      "id": ""
+    },
+    "attrs": {},
+    "parents": []
+  },
+  {
+    "uid": {
+      "type": "R",
+      "id": ""
+    },
+    "attrs": {},
+    "parents": [
+      {
+        "type": "b",
+        "id": ""
+      },
+      {
+        "type": "r",
+        "id": ""
+      }
+    ]
+  }
+]

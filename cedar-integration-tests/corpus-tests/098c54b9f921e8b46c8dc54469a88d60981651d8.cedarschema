@@ -1,0 +1,10 @@
+namespace l {
+entity E1 in [r];
+entity r in [n3330];
+entity n3330;
+action "" appliesTo {
+  principal: [E1, r, n3330],
+  resource: [r, n3330],
+  context: {}
+};
+}

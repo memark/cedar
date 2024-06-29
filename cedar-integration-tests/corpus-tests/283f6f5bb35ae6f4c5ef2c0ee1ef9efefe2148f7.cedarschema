@@ -1,0 +1,7 @@
+entity a = {"uPBXIX11g": Set < __cedar::Long >};
+action "i#" appliesTo {
+  principal: [a],
+  resource: [a],
+  context: {}
+};
+

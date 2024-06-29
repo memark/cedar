@@ -1,0 +1,10 @@
+entity r33;
+entity Dhuu0300;
+entity w;
+entity rtu;
+action "7" appliesTo {
+  principal: [Dhuu0300, w, rtu, r33],
+  resource: [w, rtu, r33],
+  context: {}
+};
+

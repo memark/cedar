@@ -1,0 +1,9 @@
+namespace WXYvk::m::A0::G3v {
+entity A0;
+entity Ww63t in [A0];
+action "action" appliesTo {
+  principal: [Ww63t, A0],
+  resource: [Ww63t, A0],
+  context: {}
+};
+}

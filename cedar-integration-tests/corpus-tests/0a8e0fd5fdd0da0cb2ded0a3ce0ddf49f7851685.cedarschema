@@ -1,0 +1,14 @@
+entity M3 in [r5wXX, b];
+entity b;
+entity r5wXX;
+action "&" appliesTo {
+  principal: [M3, r5wXX, b],
+  resource: [M3, r5wXX, b],
+  context: {}
+};
+action "" appliesTo {
+  principal: [M3, r5wXX, b],
+  resource: [M3, r5wXX, b],
+  context: {}
+};
+

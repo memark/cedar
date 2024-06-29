@@ -1,0 +1,7 @@
+entity a = {"_"?: Set < {"": a, "z"?: {}} >};
+action "action" appliesTo {
+  principal: [a],
+  resource: [a],
+  context: {}
+};
+

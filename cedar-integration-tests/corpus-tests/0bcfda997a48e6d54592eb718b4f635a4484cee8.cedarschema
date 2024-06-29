@@ -1,0 +1,9 @@
+entity C22;
+entity Ctgg3 in [r, C22];
+entity r in [C22];
+action "action" appliesTo {
+  principal: [Ctgg3, r, C22],
+  resource: [r],
+  context: {}
+};
+

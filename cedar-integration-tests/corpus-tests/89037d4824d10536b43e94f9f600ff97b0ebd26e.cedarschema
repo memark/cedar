@@ -1,0 +1,8 @@
+entity _qgmlmmmmmmmmmm;
+entity Pmmmb in [_qgmlmmmmmmmmmm];
+action "action" appliesTo {
+  principal: [Pmmmb, _qgmlmmmmmmmmmm],
+  resource: [Pmmmb, _qgmlmmmmmmmmmm],
+  context: {}
+};
+

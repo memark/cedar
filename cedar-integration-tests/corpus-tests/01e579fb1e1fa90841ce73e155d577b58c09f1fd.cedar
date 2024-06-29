@@ -1,0 +1,8 @@
+@L0("")
+forbid(
+  principal,
+  action,
+  resource
+) when {
+  ((true && (!((!principal) == principal))) && principal) && principal
+};

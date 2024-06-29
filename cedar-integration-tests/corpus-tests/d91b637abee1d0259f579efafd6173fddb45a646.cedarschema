@@ -1,0 +1,7 @@
+entity a = {"A"?: Set < __cedar::Long >};
+action "icsion" appliesTo {
+  principal: [a],
+  resource: [a],
+  context: {}
+};
+

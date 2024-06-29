@@ -1,0 +1,10 @@
+namespace r {
+entity Er;
+entity Kgc8000 in [r, Er];
+entity r in [Er];
+action "action" appliesTo {
+  principal: [Kgc8000, r, Er],
+  resource: [Kgc8000, r, Er],
+  context: {}
+};
+}

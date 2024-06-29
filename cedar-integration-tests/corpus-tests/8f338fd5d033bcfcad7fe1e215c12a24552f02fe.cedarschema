@@ -1,0 +1,8 @@
+entity a;
+action "" appliesTo {
+  principal: [a],
+  resource: [a],
+  context: {"JtvX000000"?: __cedar::String}
+};
+action "i\u{5}";
+

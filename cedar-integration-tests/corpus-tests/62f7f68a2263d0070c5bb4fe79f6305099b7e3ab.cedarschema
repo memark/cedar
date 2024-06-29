@@ -1,0 +1,8 @@
+namespace r::r::r::Kgm3333333X0mXX::_3 {
+entity a;
+action "action" appliesTo {
+  principal: [a],
+  resource: [a],
+  context: {}
+};
+}

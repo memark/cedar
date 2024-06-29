@@ -1,0 +1,7 @@
+entity a = {"sqqyyq"?: {"4\0"?: __cedar::String, "<44444:\u{1}\0"?: __cedar::String}};
+action "action" appliesTo {
+  principal: [a],
+  resource: [a],
+  context: {}
+};
+

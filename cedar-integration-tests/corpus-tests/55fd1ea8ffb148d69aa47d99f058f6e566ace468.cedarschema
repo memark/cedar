@@ -1,0 +1,11 @@
+namespace c::r {
+entity r3 in [r, h];
+entity R in [r3, r, h];
+entity r in [h];
+entity h;
+action "action" appliesTo {
+  principal: [r3, r, h],
+  resource: [r3],
+  context: {}
+};
+}

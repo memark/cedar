@@ -1,0 +1,10 @@
+entity F;
+entity R3 in [KXXXXX37, F];
+entity KXXXXX37 in [F];
+entity M in [R3, KXXXXX37, F];
+action "action" appliesTo {
+  principal: [M, R3, KXXXXX37, F],
+  resource: [M, R3, KXXXXX37],
+  context: {}
+};
+

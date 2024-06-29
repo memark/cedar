@@ -1,0 +1,8 @@
+entity a;
+action "";
+action "va\u{4}&" appliesTo {
+  principal: [a],
+  resource: [a],
+  context: {"A"?: __cedar::String}
+};
+

@@ -1,0 +1,120 @@
+[
+  {
+    "uid": {
+      "type": "Ctgg3",
+      "id": "\u0000"
+    },
+    "attrs": {},
+    "parents": [
+      {
+        "type": "r",
+        "id": ""
+      },
+      {
+        "type": "r",
+        "id": "z"
+      },
+      {
+        "type": "C22",
+        "id": ""
+      }
+    ]
+  },
+  {
+    "uid": {
+      "type": "r",
+      "id": ""
+    },
+    "attrs": {},
+    "parents": [
+      {
+        "type": "C22",
+        "id": ""
+      }
+    ]
+  },
+  {
+    "uid": {
+      "type": "r",
+      "id": "z"
+    },
+    "attrs": {},
+    "parents": [
+      {
+        "type": "C22",
+        "id": ""
+      }
+    ]
+  },
+  {
+    "uid": {
+      "type": "C22",
+      "id": ""
+    },
+    "attrs": {},
+    "parents": []
+  },
+  {
+    "uid": {
+      "type": "Ctgg3",
+      "id": "+8"
+    },
+    "attrs": {},
+    "parents": [
+      {
+        "type": "r",
+        "id": ""
+      },
+      {
+        "type": "r",
+        "id": "z"
+      },
+      {
+        "type": "C22",
+        "id": ""
+      }
+    ]
+  },
+  {
+    "uid": {
+      "type": "Ctgg3",
+      "id": "\u0002\u0000\u0000\u0004"
+    },
+    "attrs": {},
+    "parents": [
+      {
+        "type": "r",
+        "id": "z"
+      },
+      {
+        "type": "r",
+        "id": ""
+      },
+      {
+        "type": "C22",
+        "id": ""
+      }
+    ]
+  },
+  {
+    "uid": {
+      "type": "Ctgg3",
+      "id": ""
+    },
+    "attrs": {},
+    "parents": [
+      {
+        "type": "C22",
+        "id": ""
+      },
+      {
+        "type": "r",
+        "id": "z"
+      },
+      {
+        "type": "r",
+        "id": ""
+      }
+    ]
+  }
+]

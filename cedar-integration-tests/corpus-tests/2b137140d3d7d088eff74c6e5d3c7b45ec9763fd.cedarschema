@@ -1,0 +1,7 @@
+entity a;
+action "vv" appliesTo {
+  principal: [a],
+  resource: [a],
+  context: {}
+};
+

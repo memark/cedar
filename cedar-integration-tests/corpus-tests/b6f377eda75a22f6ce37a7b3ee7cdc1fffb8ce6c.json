@@ -1,0 +1,184 @@
+{
+  "policies": "corpus-tests/b6f377eda75a22f6ce37a7b3ee7cdc1fffb8ce6c.cedar",
+  "entities": "corpus-tests/b6f377eda75a22f6ce37a7b3ee7cdc1fffb8ce6c.entities.json",
+  "schema": "corpus-tests/b6f377eda75a22f6ce37a7b3ee7cdc1fffb8ce6c.cedarschema",
+  "shouldValidate": true,
+  "requests": [
+    {
+      "description": "Request 0",
+      "principal": {
+        "type": "a",
+        "id": "principal_constrain\u0000\u0000\u0000\u0004ci&\f"
+      },
+      "action": {
+        "type": "Action",
+        "id": "action"
+      },
+      "resource": {
+        "type": "a",
+        "id": "principal_constrain\u0000\u0000\u0000\u0004ci&\f"
+      },
+      "context": {},
+      "validateRequest": true,
+      "decision": "deny",
+      "reason": [
+        "policy0"
+      ],
+      "errors": []
+    },
+    {
+      "description": "Request 1",
+      "principal": {
+        "type": "a",
+        "id": "principal_constrain\u0000\u0000\u0000\u0004ci&\f"
+      },
+      "action": {
+        "type": "Action",
+        "id": "action"
+      },
+      "resource": {
+        "type": "a",
+        "id": "principal_constrain\u0000\u0000\u0000\u0004ci&\f"
+      },
+      "context": {},
+      "validateRequest": true,
+      "decision": "deny",
+      "reason": [
+        "policy0"
+      ],
+      "errors": []
+    },
+    {
+      "description": "Request 2",
+      "principal": {
+        "type": "a",
+        "id": "principal_constrain\u0000\u0000\u0000\u0004ci&\f"
+      },
+      "action": {
+        "type": "Action",
+        "id": "action"
+      },
+      "resource": {
+        "type": "a",
+        "id": "principal_constrain\u0000\u0000\u0000\u0004ci&\f"
+      },
+      "context": {},
+      "validateRequest": true,
+      "decision": "deny",
+      "reason": [
+        "policy0"
+      ],
+      "errors": []
+    },
+    {
+      "description": "Request 3",
+      "principal": {
+        "type": "a",
+        "id": "principal_constrain\u0000\u0000\u0000\u0004ci&\f"
+      },
+      "action": {
+        "type": "Action",
+        "id": "action"
+      },
+      "resource": {
+        "type": "a",
+        "id": "principal_constrain\u0000\u0000\u0000\u0004ci&\f"
+      },
+      "context": {},
+      "validateRequest": true,
+      "decision": "deny",
+      "reason": [
+        "policy0"
+      ],
+      "errors": []
+    },
+    {
+      "description": "Request 4",
+      "principal": {
+        "type": "a",
+        "id": "principal_constrain\u0000\u0000\u0000\u0004ci&\f"
+      },
+      "action": {
+        "type": "Action",
+        "id": "action"
+      },
+      "resource": {
+        "type": "a",
+        "id": "principal_constrain\u0000\u0000\u0000\u0004ci&\f"
+      },
+      "context": {},
+      "validateRequest": true,
+      "decision": "deny",
+      "reason": [
+        "policy0"
+      ],
+      "errors": []
+    },
+    {
+      "description": "Request 5",
+      "principal": {
+        "type": "a",
+        "id": "principal_constrain\u0000\u0000\u0000\u0004ci&\f"
+      },
+      "action": {
+        "type": "Action",
+        "id": "action"
+      },
+      "resource": {
+        "type": "a",
+        "id": "principal_constrain\u0000\u0000\u0000\u0004ci&\f"
+      },
+      "context": {},
+      "validateRequest": true,
+      "decision": "deny",
+      "reason": [
+        "policy0"
+      ],
+      "errors": []
+    },
+    {
+      "description": "Request 6",
+      "principal": {
+        "type": "a",
+        "id": "principal_constrain\u0000\u0000\u0000\u0004ci&\f"
+      },
+      "action": {
+        "type": "Action",
+        "id": "action"
+      },
+      "resource": {
+        "type": "a",
+        "id": "principal_constrain\u0000\u0000\u0000\u0004ci&\f"
+      },
+      "context": {},
+      "validateRequest": true,
+      "decision": "deny",
+      "reason": [
+        "policy0"
+      ],
+      "errors": []
+    },
+    {
+      "description": "Request 7",
+      "principal": {
+        "type": "a",
+        "id": "principal_constrain\u0000\u0000\u0000\u0004ci&\f"
+      },
+      "action": {
+        "type": "Action",
+        "id": "action"
+      },
+      "resource": {
+        "type": "a",
+        "id": "principal_constrain\u0000\u0000\u0000\u0004ci&\f"
+      },
+      "context": {},
+      "validateRequest": true,
+      "decision": "deny",
+      "reason": [
+        "policy0"
+      ],
+      "errors": []
+    }
+  ]
+}

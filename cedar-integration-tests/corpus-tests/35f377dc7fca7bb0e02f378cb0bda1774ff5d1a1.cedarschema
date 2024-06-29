@@ -1,0 +1,8 @@
+entity K;
+entity M33355Hw in [K];
+action "action" appliesTo {
+  principal: [M33355Hw, K],
+  resource: [M33355Hw, K],
+  context: {}
+};
+

@@ -1,0 +1,9 @@
+entity Bhuu;
+action "7" appliesTo {
+  principal: [Bhuu],
+  resource: [Bhuu],
+  context: {}
+};
+action "";
+action "8";
+

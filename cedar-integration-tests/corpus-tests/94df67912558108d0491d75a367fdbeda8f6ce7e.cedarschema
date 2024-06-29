@@ -1,0 +1,7 @@
+entity Dhu3oy = {"D"?: __cedar::String, "q"?: __cedar::Bool, "r": __cedar::String};
+action "action" appliesTo {
+  principal: [Dhu3oy],
+  resource: [Dhu3oy],
+  context: {}
+};
+

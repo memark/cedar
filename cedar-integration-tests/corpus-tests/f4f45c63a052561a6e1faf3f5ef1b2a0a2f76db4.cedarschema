@@ -1,0 +1,12 @@
+entity a;
+action "rror" appliesTo {
+  principal: [a],
+  resource: [a],
+  context: {}
+};
+action "ng" appliesTo {
+  principal: [a],
+  resource: [a],
+  context: {"P"?: __cedar::ipaddr, "r"?: __cedar::ipaddr}
+};
+

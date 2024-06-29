@@ -1,0 +1,8 @@
+namespace M {
+entity a = {"KH"?: Set < M::a >};
+action "action" appliesTo {
+  principal: [a],
+  resource: [a],
+  context: {}
+};
+}

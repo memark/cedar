@@ -1,0 +1,8 @@
+entity FXXXXX in [M333MXc];
+entity M333MXc;
+action "" appliesTo {
+  principal: [FXXXXX, M333MXc],
+  resource: [FXXXXX, M333MXc],
+  context: {}
+};
+

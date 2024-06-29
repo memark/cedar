@@ -1,0 +1,61 @@
+[
+  {
+    "uid": {
+      "type": "r::r::r::F::g::r::A::B",
+      "id": ""
+    },
+    "attrs": {},
+    "parents": [
+      {
+        "type": "r::r::r::F::g::r::A::r",
+        "id": ""
+      },
+      {
+        "type": "r::r::r::F::g::r::A::J",
+        "id": ""
+      }
+    ]
+  },
+  {
+    "uid": {
+      "type": "r::r::r::F::g::r::A::J",
+      "id": ""
+    },
+    "attrs": {},
+    "parents": []
+  },
+  {
+    "uid": {
+      "type": "r::r::r::F::g::r::A::r",
+      "id": ""
+    },
+    "attrs": {},
+    "parents": [
+      {
+        "type": "r::r::r::F::g::r::A::J",
+        "id": ""
+      }
+    ]
+  },
+  {
+    "uid": {
+      "type": "r::r::r::F::g::r::A::A",
+      "id": ""
+    },
+    "attrs": {},
+    "parents": [
+      {
+        "type": "r::r::r::F::g::r::A::B",
+        "id": ""
+      },
+      {
+        "type": "r::r::r::F::g::r::A::r",
+        "id": ""
+      },
+      {
+        "type": "r::r::r::F::g::r::A::J",
+        "id": ""
+      }
+    ]
+  }
+]

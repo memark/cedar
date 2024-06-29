@@ -1,0 +1,8 @@
+namespace D73333312qyqqqqqp {
+entity _000P000XYerYNl;
+action "action" appliesTo {
+  principal: [_000P000XYerYNl],
+  resource: [_000P000XYerYNl],
+  context: {}
+};
+}

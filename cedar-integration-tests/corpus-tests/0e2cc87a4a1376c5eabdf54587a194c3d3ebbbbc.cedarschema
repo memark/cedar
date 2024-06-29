@@ -1,0 +1,9 @@
+entity A3XttX in [yXc];
+entity yXc;
+entity M333MXY in [A3XttX, yXc];
+action "action" appliesTo {
+  principal: [M333MXY, A3XttX, yXc],
+  resource: [M333MXY, A3XttX, yXc],
+  context: {}
+};
+

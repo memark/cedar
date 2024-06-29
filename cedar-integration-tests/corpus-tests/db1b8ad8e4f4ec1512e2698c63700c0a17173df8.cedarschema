@@ -1,0 +1,10 @@
+entity a;
+action "";
+action "444";
+action "2" appliesTo {
+  principal: [a],
+  resource: [a],
+  context: {}
+};
+action "44444$44444444444";
+

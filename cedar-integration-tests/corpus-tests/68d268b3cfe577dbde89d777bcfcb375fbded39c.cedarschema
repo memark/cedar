@@ -1,0 +1,7 @@
+entity a;
+action "gbs000\u{e}4<444443:" appliesTo {
+  principal: [a],
+  resource: [a],
+  context: {}
+};
+

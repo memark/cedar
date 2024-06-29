@@ -1,0 +1,86 @@
+[
+  {
+    "uid": {
+      "type": "r",
+      "id": ""
+    },
+    "attrs": {},
+    "parents": [
+      {
+        "type": "A",
+        "id": ""
+      }
+    ]
+  },
+  {
+    "uid": {
+      "type": "A",
+      "id": ""
+    },
+    "attrs": {},
+    "parents": []
+  },
+  {
+    "uid": {
+      "type": "A2",
+      "id": ""
+    },
+    "attrs": {},
+    "parents": [
+      {
+        "type": "A",
+        "id": ""
+      },
+      {
+        "type": "r",
+        "id": ""
+      },
+      {
+        "type": "c303",
+        "id": ""
+      }
+    ]
+  },
+  {
+    "uid": {
+      "type": "DWXwl3",
+      "id": ""
+    },
+    "attrs": {},
+    "parents": [
+      {
+        "type": "A2",
+        "id": ""
+      },
+      {
+        "type": "c303",
+        "id": ""
+      },
+      {
+        "type": "A",
+        "id": ""
+      },
+      {
+        "type": "r",
+        "id": ""
+      }
+    ]
+  },
+  {
+    "uid": {
+      "type": "c303",
+      "id": ""
+    },
+    "attrs": {},
+    "parents": [
+      {
+        "type": "r",
+        "id": ""
+      },
+      {
+        "type": "A",
+        "id": ""
+      }
+    ]
+  }
+]

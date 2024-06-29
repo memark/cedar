@@ -1,0 +1,10 @@
+namespace g {
+entity K in [l733];
+entity A in [K, l733];
+entity l733;
+action "action" appliesTo {
+  principal: [A, K, l733],
+  resource: [l733],
+  context: {}
+};
+}

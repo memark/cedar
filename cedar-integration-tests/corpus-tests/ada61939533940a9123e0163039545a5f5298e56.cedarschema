@@ -1,0 +1,13 @@
+entity w in [q];
+entity q;
+action "y" appliesTo {
+  principal: [w],
+  resource: [w],
+  context: {}
+};
+action "0" appliesTo {
+  principal: [w],
+  resource: [w],
+  context: {}
+};
+

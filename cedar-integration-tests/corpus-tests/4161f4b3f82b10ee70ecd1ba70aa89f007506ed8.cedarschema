@@ -1,0 +1,8 @@
+namespace Pmm3mmm::PUmmm {
+entity AmmmmmmmmXmm;
+action "action" appliesTo {
+  principal: [AmmmmmmmmXmm],
+  resource: [AmmmmmmmmXmm],
+  context: {}
+};
+}

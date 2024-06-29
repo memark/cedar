@@ -1,0 +1,49 @@
+[
+  {
+    "uid": {
+      "type": "B",
+      "id": "\u0000V0"
+    },
+    "attrs": {},
+    "parents": [
+      {
+        "type": "A05000A0180N00mN",
+        "id": ""
+      }
+    ]
+  },
+  {
+    "uid": {
+      "type": "B",
+      "id": "a"
+    },
+    "attrs": {},
+    "parents": [
+      {
+        "type": "A05000A0180N00mN",
+        "id": ""
+      }
+    ]
+  },
+  {
+    "uid": {
+      "type": "B",
+      "id": ""
+    },
+    "attrs": {},
+    "parents": [
+      {
+        "type": "A05000A0180N00mN",
+        "id": ""
+      }
+    ]
+  },
+  {
+    "uid": {
+      "type": "A05000A0180N00mN",
+      "id": ""
+    },
+    "attrs": {},
+    "parents": []
+  }
+]

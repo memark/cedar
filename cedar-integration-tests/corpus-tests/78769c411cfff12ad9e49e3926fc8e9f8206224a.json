@@ -1,0 +1,216 @@
+{
+  "policies": "corpus-tests/78769c411cfff12ad9e49e3926fc8e9f8206224a.cedar",
+  "entities": "corpus-tests/78769c411cfff12ad9e49e3926fc8e9f8206224a.entities.json",
+  "schema": "corpus-tests/78769c411cfff12ad9e49e3926fc8e9f8206224a.cedarschema",
+  "shouldValidate": true,
+  "requests": [
+    {
+      "description": "Request 0",
+      "principal": {
+        "type": "EmrYu",
+        "id": ""
+      },
+      "action": {
+        "type": "Action",
+        "id": "action"
+      },
+      "resource": {
+        "type": "EmrYu",
+        "id": ""
+      },
+      "context": {
+        "siii000000t": "",
+        "Y0t00000": "",
+        "siii": ""
+      },
+      "validateRequest": true,
+      "decision": "allow",
+      "reason": [
+        "policy0"
+      ],
+      "errors": []
+    },
+    {
+      "description": "Request 1",
+      "principal": {
+        "type": "EmrYu",
+        "id": ""
+      },
+      "action": {
+        "type": "Action",
+        "id": "action"
+      },
+      "resource": {
+        "type": "EmrYu",
+        "id": ""
+      },
+      "context": {
+        "siii000000t": "",
+        "Y0t00000": "",
+        "siii": ""
+      },
+      "validateRequest": true,
+      "decision": "allow",
+      "reason": [
+        "policy0"
+      ],
+      "errors": []
+    },
+    {
+      "description": "Request 2",
+      "principal": {
+        "type": "EmrYu",
+        "id": ""
+      },
+      "action": {
+        "type": "Action",
+        "id": "action"
+      },
+      "resource": {
+        "type": "EmrYu",
+        "id": ""
+      },
+      "context": {
+        "siii000000t": "",
+        "Y0t00000": "",
+        "siii": ""
+      },
+      "validateRequest": true,
+      "decision": "allow",
+      "reason": [
+        "policy0"
+      ],
+      "errors": []
+    },
+    {
+      "description": "Request 3",
+      "principal": {
+        "type": "EmrYu",
+        "id": ""
+      },
+      "action": {
+        "type": "Action",
+        "id": "action"
+      },
+      "resource": {
+        "type": "EmrYu",
+        "id": ""
+      },
+      "context": {
+        "siii000000t": "",
+        "Y0t00000": "",
+        "siii": ""
+      },
+      "validateRequest": true,
+      "decision": "allow",
+      "reason": [
+        "policy0"
+      ],
+      "errors": []
+    },
+    {
+      "description": "Request 4",
+      "principal": {
+        "type": "EmrYu",
+        "id": ""
+      },
+      "action": {
+        "type": "Action",
+        "id": "action"
+      },
+      "resource": {
+        "type": "EmrYu",
+        "id": ""
+      },
+      "context": {
+        "siii000000t": "",
+        "Y0t00000": "",
+        "siii": ""
+      },
+      "validateRequest": true,
+      "decision": "allow",
+      "reason": [
+        "policy0"
+      ],
+      "errors": []
+    },
+    {
+      "description": "Request 5",
+      "principal": {
+        "type": "EmrYu",
+        "id": ""
+      },
+      "action": {
+        "type": "Action",
+        "id": "action"
+      },
+      "resource": {
+        "type": "EmrYu",
+        "id": ""
+      },
+      "context": {
+        "siii000000t": "",
+        "Y0t00000": "",
+        "siii": ""
+      },
+      "validateRequest": true,
+      "decision": "allow",
+      "reason": [
+        "policy0"
+      ],
+      "errors": []
+    },
+    {
+      "description": "Request 6",
+      "principal": {
+        "type": "EmrYu",
+        "id": ""
+      },
+      "action": {
+        "type": "Action",
+        "id": "action"
+      },
+      "resource": {
+        "type": "EmrYu",
+        "id": ""
+      },
+      "context": {
+        "siii000000t": "",
+        "Y0t00000": "",
+        "siii": ""
+      },
+      "validateRequest": true,
+      "decision": "allow",
+      "reason": [
+        "policy0"
+      ],
+      "errors": []
+    },
+    {
+      "description": "Request 7",
+      "principal": {
+        "type": "EmrYu",
+        "id": ""
+      },
+      "action": {
+        "type": "Action",
+        "id": "action"
+      },
+      "resource": {
+        "type": "EmrYu",
+        "id": ""
+      },
+      "context": {
+        "siii000000t": "",
+        "Y0t00000": "",
+        "siii": ""
+      },
+      "validateRequest": true,
+      "decision": "allow",
+      "reason": [
+        "policy0"
+      ],
+      "errors": []
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+entity a;
+action "444<444" appliesTo {
+  principal: [a],
+  resource: [a],
+  context: {"DAqwuu"?: {""?: __cedar::String, "is"?: __cedar::String}}
+};
+

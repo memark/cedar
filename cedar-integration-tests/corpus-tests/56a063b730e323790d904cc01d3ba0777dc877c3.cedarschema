@@ -1,0 +1,9 @@
+namespace z::z::z::z {
+entity Pmmmm = {"P000"?: __cedar::String};
+entity A in [Pmmmm];
+action "action" appliesTo {
+  principal: [A, Pmmmm],
+  resource: [A, Pmmmm],
+  context: {}
+};
+}

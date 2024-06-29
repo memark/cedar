@@ -1,0 +1,9 @@
+entity PmJIf in [Pm3f6, Lmbmm];
+entity Pm3f6 in [Lmbmm];
+entity Lmbmm;
+action "action" appliesTo {
+  principal: [PmJIf, Lmbmm],
+  resource: [PmJIf, Pm3f6, Lmbmm],
+  context: {}
+};
+

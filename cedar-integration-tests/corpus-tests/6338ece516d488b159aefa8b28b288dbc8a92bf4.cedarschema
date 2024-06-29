@@ -1,0 +1,9 @@
+entity a;
+action "n" appliesTo {
+  principal: [a],
+  resource: [a],
+  context: {}
+};
+action "";
+action "_scop";
+

@@ -1,0 +1,7 @@
+entity MXSXXHXjX1000w333;
+action "action" appliesTo {
+  principal: [MXSXXHXjX1000w333],
+  resource: [MXSXXHXjX1000w333],
+  context: {}
+};
+

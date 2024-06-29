@@ -1,0 +1,9 @@
+entity Ym in [A] = {"v"?: g};
+entity g in [Ym, A] = {"A": __cedar::String};
+entity A = {"n"?: __cedar::Bool};
+action "action" appliesTo {
+  principal: [g, Ym, A],
+  resource: [g, Ym, A],
+  context: {}
+};
+

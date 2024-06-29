@@ -1,0 +1,9 @@
+namespace A {
+entity r;
+entity o in [r];
+action "action" appliesTo {
+  principal: [o],
+  resource: [o, r],
+  context: {}
+};
+}

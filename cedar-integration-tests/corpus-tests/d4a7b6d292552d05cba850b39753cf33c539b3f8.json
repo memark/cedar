@@ -1,0 +1,184 @@
+{
+  "policies": "corpus-tests/d4a7b6d292552d05cba850b39753cf33c539b3f8.cedar",
+  "entities": "corpus-tests/d4a7b6d292552d05cba850b39753cf33c539b3f8.entities.json",
+  "schema": "corpus-tests/d4a7b6d292552d05cba850b39753cf33c539b3f8.cedarschema",
+  "shouldValidate": true,
+  "requests": [
+    {
+      "description": "Request 0",
+      "principal": {
+        "type": "r::Kgc8000",
+        "id": "\u0000\u0000\u0000\u0000\u0000"
+      },
+      "action": {
+        "type": "r::Action",
+        "id": "action"
+      },
+      "resource": {
+        "type": "r::Kgc8000",
+        "id": "\u0000\u0000\u0000\u0000\u0000"
+      },
+      "context": {},
+      "validateRequest": true,
+      "decision": "allow",
+      "reason": [
+        "policy0"
+      ],
+      "errors": []
+    },
+    {
+      "description": "Request 1",
+      "principal": {
+        "type": "r::Kgc8000",
+        "id": "\u0000\u0000\u0000\u0000\u0000"
+      },
+      "action": {
+        "type": "r::Action",
+        "id": "action"
+      },
+      "resource": {
+        "type": "r::Kgc8000",
+        "id": "\u0000\u0000\u0000\u0000\u0000"
+      },
+      "context": {},
+      "validateRequest": true,
+      "decision": "allow",
+      "reason": [
+        "policy0"
+      ],
+      "errors": []
+    },
+    {
+      "description": "Request 2",
+      "principal": {
+        "type": "r::Kgc8000",
+        "id": "\u0000\u0000\u0000\u0000\u0000"
+      },
+      "action": {
+        "type": "r::Action",
+        "id": "action"
+      },
+      "resource": {
+        "type": "r::Kgc8000",
+        "id": "\u0000\u0000\u0000\u0000\u0000"
+      },
+      "context": {},
+      "validateRequest": true,
+      "decision": "allow",
+      "reason": [
+        "policy0"
+      ],
+      "errors": []
+    },
+    {
+      "description": "Request 3",
+      "principal": {
+        "type": "r::Kgc8000",
+        "id": "\u0000\u0000\u0000\u0000\u0000"
+      },
+      "action": {
+        "type": "r::Action",
+        "id": "action"
+      },
+      "resource": {
+        "type": "r::Kgc8000",
+        "id": "\u0000\u0000\u0000\u0000\u0000"
+      },
+      "context": {},
+      "validateRequest": true,
+      "decision": "allow",
+      "reason": [
+        "policy0"
+      ],
+      "errors": []
+    },
+    {
+      "description": "Request 4",
+      "principal": {
+        "type": "r::Kgc8000",
+        "id": "\u0000\u0000\u0000\u0000\u0000"
+      },
+      "action": {
+        "type": "r::Action",
+        "id": "action"
+      },
+      "resource": {
+        "type": "r::Kgc8000",
+        "id": "\u0000\u0000\u0000\u0000\u0000"
+      },
+      "context": {},
+      "validateRequest": true,
+      "decision": "allow",
+      "reason": [
+        "policy0"
+      ],
+      "errors": []
+    },
+    {
+      "description": "Request 5",
+      "principal": {
+        "type": "r::Kgc8000",
+        "id": "\u0000\u0000\u0000\u0000\u0000"
+      },
+      "action": {
+        "type": "r::Action",
+        "id": "action"
+      },
+      "resource": {
+        "type": "r::Kgc8000",
+        "id": "\u0000\u0000\u0000\u0000\u0000"
+      },
+      "context": {},
+      "validateRequest": true,
+      "decision": "allow",
+      "reason": [
+        "policy0"
+      ],
+      "errors": []
+    },
+    {
+      "description": "Request 6",
+      "principal": {
+        "type": "r::Kgc8000",
+        "id": "\u0000\u0000\u0000\u0000\u0000"
+      },
+      "action": {
+        "type": "r::Action",
+        "id": "action"
+      },
+      "resource": {
+        "type": "r::Kgc8000",
+        "id": "\u0000\u0000\u0000\u0000\u0000"
+      },
+      "context": {},
+      "validateRequest": true,
+      "decision": "allow",
+      "reason": [
+        "policy0"
+      ],
+      "errors": []
+    },
+    {
+      "description": "Request 7",
+      "principal": {
+        "type": "r::Kgc8000",
+        "id": "\u0000\u0000\u0000\u0000\u0000"
+      },
+      "action": {
+        "type": "r::Action",
+        "id": "action"
+      },
+      "resource": {
+        "type": "r::Kgc8000",
+        "id": "\u0000\u0000\u0000\u0000\u0000"
+      },
+      "context": {},
+      "validateRequest": true,
+      "decision": "allow",
+      "reason": [
+        "policy0"
+      ],
+      "errors": []
+    }
+  ]
+}

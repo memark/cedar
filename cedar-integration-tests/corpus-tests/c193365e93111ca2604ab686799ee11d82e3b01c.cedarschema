@@ -1,0 +1,12 @@
+entity a;
+action "" appliesTo {
+  principal: [a],
+  resource: [a],
+  context: {"A"?: {}, "l"?: {}, "r"?: {}}
+};
+action "\u{7}" appliesTo {
+  principal: [a],
+  resource: [a],
+  context: {}
+};
+

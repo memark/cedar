@@ -1,0 +1,8 @@
+entity A05000A0180N00mN;
+entity B in [A05000A0180N00mN];
+action "action" appliesTo {
+  principal: [A05000A0180N00mN],
+  resource: [A05000A0180N00mN],
+  context: {}
+};
+

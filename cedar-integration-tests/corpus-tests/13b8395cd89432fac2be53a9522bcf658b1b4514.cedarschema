@@ -1,0 +1,8 @@
+namespace oAA3y3::r::j::r::B::jw8A {
+entity a = {"A0"?: __cedar::String};
+action "action" appliesTo {
+  principal: [a],
+  resource: [a],
+  context: {}
+};
+}

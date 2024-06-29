@@ -1,0 +1,7 @@
+entity a = {"sqpyqq": {""?: __cedar::Long, "4"?: {}}};
+action "action" appliesTo {
+  principal: [a],
+  resource: [a],
+  context: {}
+};
+

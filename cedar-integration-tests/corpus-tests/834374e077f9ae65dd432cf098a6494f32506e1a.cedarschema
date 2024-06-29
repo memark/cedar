@@ -1,0 +1,18 @@
+entity b;
+entity M3 in [b];
+action "!" appliesTo {
+  principal: [M3],
+  resource: [b],
+  context: {}
+};
+action "!a" appliesTo {
+  principal: [M3, b],
+  resource: [M3, b],
+  context: {}
+};
+action "" appliesTo {
+  principal: [M3, b],
+  resource: [M3, b],
+  context: {}
+};
+

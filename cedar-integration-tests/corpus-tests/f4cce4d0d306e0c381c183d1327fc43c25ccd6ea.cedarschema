@@ -1,0 +1,8 @@
+namespace MtXXXXXH000000000 {
+entity a;
+action "action" appliesTo {
+  principal: [a],
+  resource: [a],
+  context: {}
+};
+}

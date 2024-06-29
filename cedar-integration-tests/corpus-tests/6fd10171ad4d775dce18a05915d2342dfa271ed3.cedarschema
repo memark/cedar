@@ -1,0 +1,7 @@
+entity a = {"DGuE": Set < __cedar::decimal >, "r"?: __cedar::decimal};
+action "action" appliesTo {
+  principal: [a],
+  resource: [a],
+  context: {}
+};
+

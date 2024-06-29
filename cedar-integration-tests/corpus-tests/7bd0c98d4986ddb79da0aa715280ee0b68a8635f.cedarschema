@@ -1,0 +1,11 @@
+entity DWXwl3 in [A2, c303, r];
+entity A2 in [c303, r, A];
+entity r in [A];
+entity A;
+entity c303 in [r, A];
+action "action" appliesTo {
+  principal: [DWXwl3, A2, c303, r, A],
+  resource: [DWXwl3, A2, c303, r, A],
+  context: {}
+};
+

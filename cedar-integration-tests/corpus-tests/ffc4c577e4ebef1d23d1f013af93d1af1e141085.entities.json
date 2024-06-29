@@ -1,0 +1,42 @@
+[
+  {
+    "uid": {
+      "type": "n000",
+      "id": ""
+    },
+    "attrs": {
+      "Gj77": ""
+    },
+    "parents": []
+  },
+  {
+    "uid": {
+      "type": "r",
+      "id": ""
+    },
+    "attrs": {},
+    "parents": [
+      {
+        "type": "n000",
+        "id": ""
+      }
+    ]
+  },
+  {
+    "uid": {
+      "type": "A",
+      "id": ""
+    },
+    "attrs": {},
+    "parents": [
+      {
+        "type": "r",
+        "id": ""
+      },
+      {
+        "type": "n000",
+        "id": ""
+      }
+    ]
+  }
+]

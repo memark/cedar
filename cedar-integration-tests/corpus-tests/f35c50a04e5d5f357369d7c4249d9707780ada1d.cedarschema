@@ -1,0 +1,8 @@
+namespace r::A0337 {
+entity a;
+action "action" appliesTo {
+  principal: [a],
+  resource: [a],
+  context: {}
+};
+}

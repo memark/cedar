@@ -1,0 +1,10 @@
+namespace b::B::r {
+entity R;
+entity l7710 in [R];
+action "{" appliesTo {
+  principal: [l7710, R],
+  resource: [l7710, R],
+  context: {}
+};
+action "";
+}

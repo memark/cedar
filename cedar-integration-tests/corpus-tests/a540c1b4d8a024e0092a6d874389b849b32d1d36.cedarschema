@@ -1,0 +1,7 @@
+entity a = {"pKurck": {"tpe\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0t8": __cedar::String}};
+action "action" appliesTo {
+  principal: [a],
+  resource: [a],
+  context: {}
+};
+

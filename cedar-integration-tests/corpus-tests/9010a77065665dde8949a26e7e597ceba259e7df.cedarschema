@@ -1,0 +1,8 @@
+entity _rshus in [rjghliWgbjDI1eXX8];
+entity rjghliWgbjDI1eXX8;
+action "action" appliesTo {
+  principal: [_rshus, rjghliWgbjDI1eXX8],
+  resource: [rjghliWgbjDI1eXX8],
+  context: {}
+};
+

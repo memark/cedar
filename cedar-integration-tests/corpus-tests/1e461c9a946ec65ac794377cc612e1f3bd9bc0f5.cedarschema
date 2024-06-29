@@ -1,0 +1,8 @@
+entity a;
+action "ncipal_constr@incipal_constrain" appliesTo {
+  principal: [a],
+  resource: [a],
+  context: {}
+};
+action "";
+

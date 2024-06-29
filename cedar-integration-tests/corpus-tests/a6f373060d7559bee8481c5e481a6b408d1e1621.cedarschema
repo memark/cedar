@@ -1,0 +1,8 @@
+entity r in [FHw33X];
+entity FHw33X;
+action "action" appliesTo {
+  principal: [r, FHw33X],
+  resource: [r, FHw33X],
+  context: {}
+};
+

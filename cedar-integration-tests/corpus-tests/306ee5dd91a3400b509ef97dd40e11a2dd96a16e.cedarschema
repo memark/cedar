@@ -1,0 +1,7 @@
+entity wtrdknjYH0f6Ivi;
+action "action" appliesTo {
+  principal: [wtrdknjYH0f6Ivi],
+  resource: [wtrdknjYH0f6Ivi],
+  context: {}
+};
+

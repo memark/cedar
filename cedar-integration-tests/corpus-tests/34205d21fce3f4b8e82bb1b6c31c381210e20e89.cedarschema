@@ -1,0 +1,7 @@
+entity a = {"Yo"?: Set < Set < Set < Set < __cedar::Long > > > >};
+action "ĺ" appliesTo {
+  principal: [a],
+  resource: [a],
+  context: {}
+};
+

@@ -1,0 +1,9 @@
+entity DDuuuu;
+action "8" appliesTo {
+  principal: [DDuuuu],
+  resource: [DDuuuu],
+  context: {}
+};
+action "";
+action "8+8";
+

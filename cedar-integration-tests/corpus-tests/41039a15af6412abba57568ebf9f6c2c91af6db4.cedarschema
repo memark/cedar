@@ -1,0 +1,7 @@
+entity a;
+action "action" appliesTo {
+  principal: [a],
+  resource: [a],
+  context: {"A"?: {"niaection_conso\0\0\0Pl\0\u{1}\0;;"?: a, "q\0s"?: __cedar::String}}
+};
+

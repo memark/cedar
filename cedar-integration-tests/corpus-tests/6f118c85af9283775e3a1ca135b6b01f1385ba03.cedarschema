@@ -1,0 +1,9 @@
+namespace ld77d87777A {
+entity A in [r];
+entity r;
+action "action" appliesTo {
+  principal: [A, r],
+  resource: [A, r],
+  context: {}
+};
+}

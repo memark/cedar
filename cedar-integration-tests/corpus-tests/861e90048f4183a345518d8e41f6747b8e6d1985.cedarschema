@@ -1,0 +1,8 @@
+namespace l {
+entity a = {"r"?: __cedar::decimal};
+action "" appliesTo {
+  principal: [a],
+  resource: [a],
+  context: {}
+};
+}

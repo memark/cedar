@@ -1,0 +1,184 @@
+{
+  "policies": "corpus-tests/a1546761dfd39925de4f9091af122e35008dd6dd.cedar",
+  "entities": "corpus-tests/a1546761dfd39925de4f9091af122e35008dd6dd.entities.json",
+  "schema": "corpus-tests/a1546761dfd39925de4f9091af122e35008dd6dd.cedarschema",
+  "shouldValidate": false,
+  "requests": [
+    {
+      "description": "Request 0",
+      "principal": {
+        "type": "a",
+        "id": "@c\"86Awnd\u0000\u0000\u0000\u0000\u0000c\"\"\"\"5\u0000\u0000\u0000\u0000\u0000\u0000"
+      },
+      "action": {
+        "type": "Action",
+        "id": "action"
+      },
+      "resource": {
+        "type": "a",
+        "id": "@c\"86Awnd\u0000\u0000\u0000\u0000\u0000c\"\"\"\"5\u0000\u0000\u0000\u0000\u0000\u0000"
+      },
+      "context": {},
+      "validateRequest": true,
+      "decision": "deny",
+      "reason": [],
+      "errors": [
+        "policy0"
+      ]
+    },
+    {
+      "description": "Request 1",
+      "principal": {
+        "type": "a",
+        "id": "@c\"86Awnd\u0000\u0000\u0000\u0000\u0000c\"\"\"\"5\u0000\u0000\u0000\u0000\u0000\u0000"
+      },
+      "action": {
+        "type": "Action",
+        "id": "action"
+      },
+      "resource": {
+        "type": "a",
+        "id": "@c\"86Awnd\u0000\u0000\u0000\u0000\u0000c\"\"\"\"5\u0000\u0000\u0000\u0000\u0000\u0000"
+      },
+      "context": {},
+      "validateRequest": true,
+      "decision": "deny",
+      "reason": [],
+      "errors": [
+        "policy0"
+      ]
+    },
+    {
+      "description": "Request 2",
+      "principal": {
+        "type": "a",
+        "id": "@c\"86Awnd\u0000\u0000\u0000\u0000\u0000c\"\"\"\"5\u0000\u0000\u0000\u0000\u0000\u0000"
+      },
+      "action": {
+        "type": "Action",
+        "id": "action"
+      },
+      "resource": {
+        "type": "a",
+        "id": "@c\"86Awnd\u0000\u0000\u0000\u0000\u0000c\"\"\"\"5\u0000\u0000\u0000\u0000\u0000\u0000"
+      },
+      "context": {},
+      "validateRequest": true,
+      "decision": "deny",
+      "reason": [],
+      "errors": [
+        "policy0"
+      ]
+    },
+    {
+      "description": "Request 3",
+      "principal": {
+        "type": "a",
+        "id": "@c\"86Awnd\u0000\u0000\u0000\u0000\u0000c\"\"\"\"5\u0000\u0000\u0000\u0000\u0000\u0000"
+      },
+      "action": {
+        "type": "Action",
+        "id": "action"
+      },
+      "resource": {
+        "type": "a",
+        "id": "@c\"86Awnd\u0000\u0000\u0000\u0000\u0000c\"\"\"\"5\u0000\u0000\u0000\u0000\u0000\u0000"
+      },
+      "context": {},
+      "validateRequest": true,
+      "decision": "deny",
+      "reason": [],
+      "errors": [
+        "policy0"
+      ]
+    },
+    {
+      "description": "Request 4",
+      "principal": {
+        "type": "a",
+        "id": "@c\"86Awnd\u0000\u0000\u0000\u0000\u0000c\"\"\"\"5\u0000\u0000\u0000\u0000\u0000\u0000"
+      },
+      "action": {
+        "type": "Action",
+        "id": "action"
+      },
+      "resource": {
+        "type": "a",
+        "id": "@c\"86Awnd\u0000\u0000\u0000\u0000\u0000c\"\"\"\"5\u0000\u0000\u0000\u0000\u0000\u0000"
+      },
+      "context": {},
+      "validateRequest": true,
+      "decision": "deny",
+      "reason": [],
+      "errors": [
+        "policy0"
+      ]
+    },
+    {
+      "description": "Request 5",
+      "principal": {
+        "type": "a",
+        "id": "@c\"86Awnd\u0000\u0000\u0000\u0000\u0000c\"\"\"\"5\u0000\u0000\u0000\u0000\u0000\u0000"
+      },
+      "action": {
+        "type": "Action",
+        "id": "action"
+      },
+      "resource": {
+        "type": "a",
+        "id": "@c\"86Awnd\u0000\u0000\u0000\u0000\u0000c\"\"\"\"5\u0000\u0000\u0000\u0000\u0000\u0000"
+      },
+      "context": {},
+      "validateRequest": true,
+      "decision": "deny",
+      "reason": [],
+      "errors": [
+        "policy0"
+      ]
+    },
+    {
+      "description": "Request 6",
+      "principal": {
+        "type": "a",
+        "id": "@c\"86Awnd\u0000\u0000\u0000\u0000\u0000c\"\"\"\"5\u0000\u0000\u0000\u0000\u0000\u0000"
+      },
+      "action": {
+        "type": "Action",
+        "id": "action"
+      },
+      "resource": {
+        "type": "a",
+        "id": "@c\"86Awnd\u0000\u0000\u0000\u0000\u0000c\"\"\"\"5\u0000\u0000\u0000\u0000\u0000\u0000"
+      },
+      "context": {},
+      "validateRequest": true,
+      "decision": "deny",
+      "reason": [],
+      "errors": [
+        "policy0"
+      ]
+    },
+    {
+      "description": "Request 7",
+      "principal": {
+        "type": "a",
+        "id": "@c\"86Awnd\u0000\u0000\u0000\u0000\u0000c\"\"\"\"5\u0000\u0000\u0000\u0000\u0000\u0000"
+      },
+      "action": {
+        "type": "Action",
+        "id": "action"
+      },
+      "resource": {
+        "type": "a",
+        "id": "@c\"86Awnd\u0000\u0000\u0000\u0000\u0000c\"\"\"\"5\u0000\u0000\u0000\u0000\u0000\u0000"
+      },
+      "context": {},
+      "validateRequest": true,
+      "decision": "deny",
+      "reason": [],
+      "errors": [
+        "policy0"
+      ]
+    }
+  ]
+}

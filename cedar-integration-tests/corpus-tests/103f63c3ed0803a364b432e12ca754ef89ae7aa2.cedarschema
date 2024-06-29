@@ -1,0 +1,7 @@
+entity a = {"Yo"?: Set < {""?: {""?: __cedar::ipaddr, "a"?: __cedar::ipaddr, "m\'\0": __cedar::ipaddr}} >};
+action "" appliesTo {
+  principal: [a],
+  resource: [a],
+  context: {}
+};
+

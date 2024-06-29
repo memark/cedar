@@ -1,0 +1,8 @@
+namespace cIIIIImmmmmmmm::A00000 {
+entity a;
+action "action" appliesTo {
+  principal: [a],
+  resource: [a],
+  context: {}
+};
+}

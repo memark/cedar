@@ -1,0 +1,17 @@
+entity a;
+action ")))))\u{10}" appliesTo {
+  principal: [a],
+  resource: [a],
+  context: {}
+};
+action "" appliesTo {
+  principal: [a],
+  resource: [a],
+  context: {}
+};
+action "z" appliesTo {
+  principal: [a],
+  resource: [a],
+  context: {}
+};
+

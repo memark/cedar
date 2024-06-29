@@ -1,0 +1,108 @@
+[
+  {
+    "uid": {
+      "type": "r::r",
+      "id": ""
+    },
+    "attrs": {},
+    "parents": [
+      {
+        "type": "r::Er",
+        "id": ""
+      }
+    ]
+  },
+  {
+    "uid": {
+      "type": "r::Kgc8000",
+      "id": ""
+    },
+    "attrs": {},
+    "parents": [
+      {
+        "type": "r::Er",
+        "id": ""
+      },
+      {
+        "type": "r::r",
+        "id": ""
+      }
+    ]
+  },
+  {
+    "uid": {
+      "type": "r::Kgc8000",
+      "id": "=="
+    },
+    "attrs": {},
+    "parents": [
+      {
+        "type": "r::r",
+        "id": ""
+      },
+      {
+        "type": "r::Er",
+        "id": ""
+      }
+    ]
+  },
+  {
+    "uid": {
+      "type": "r::Kgc8000",
+      "id": "\u000b"
+    },
+    "attrs": {},
+    "parents": [
+      {
+        "type": "r::r",
+        "id": ""
+      },
+      {
+        "type": "r::Er",
+        "id": ""
+      }
+    ]
+  },
+  {
+    "uid": {
+      "type": "r::Kgc8000",
+      "id": "<"
+    },
+    "attrs": {},
+    "parents": [
+      {
+        "type": "r::r",
+        "id": ""
+      },
+      {
+        "type": "r::Er",
+        "id": ""
+      }
+    ]
+  },
+  {
+    "uid": {
+      "type": "r::Er",
+      "id": ""
+    },
+    "attrs": {},
+    "parents": []
+  },
+  {
+    "uid": {
+      "type": "r::Kgc8000",
+      "id": "\u0000\u0000\u0000\u0000\u0000"
+    },
+    "attrs": {},
+    "parents": [
+      {
+        "type": "r::Er",
+        "id": ""
+      },
+      {
+        "type": "r::r",
+        "id": ""
+      }
+    ]
+  }
+]

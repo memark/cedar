@@ -1,0 +1,7 @@
+entity v = {"KX": __cedar::String, "b": v, "d"?: __cedar::Bool, "r": Set < {} >};
+action "action" appliesTo {
+  principal: [v],
+  resource: [v],
+  context: {}
+};
+

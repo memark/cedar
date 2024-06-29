@@ -1,0 +1,8 @@
+namespace Gxz7s77wml37::G {
+entity a;
+action "action" appliesTo {
+  principal: [a],
+  resource: [a],
+  context: {}
+};
+}

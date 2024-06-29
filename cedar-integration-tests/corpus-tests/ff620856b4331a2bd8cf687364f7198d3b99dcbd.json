@@ -1,0 +1,208 @@
+{
+  "policies": "corpus-tests/ff620856b4331a2bd8cf687364f7198d3b99dcbd.cedar",
+  "entities": "corpus-tests/ff620856b4331a2bd8cf687364f7198d3b99dcbd.entities.json",
+  "schema": "corpus-tests/ff620856b4331a2bd8cf687364f7198d3b99dcbd.cedarschema",
+  "shouldValidate": true,
+  "requests": [
+    {
+      "description": "Request 0",
+      "principal": {
+        "type": "r::A4::Hx777700X7777373::a",
+        "id": ""
+      },
+      "action": {
+        "type": "r::A4::Hx777700X7777373::Action",
+        "id": ""
+      },
+      "resource": {
+        "type": "r::A4::Hx777700X7777373::a",
+        "id": ""
+      },
+      "context": {
+        "A": "",
+        "G": ""
+      },
+      "validateRequest": true,
+      "decision": "allow",
+      "reason": [
+        "policy0"
+      ],
+      "errors": []
+    },
+    {
+      "description": "Request 1",
+      "principal": {
+        "type": "r::A4::Hx777700X7777373::a",
+        "id": ""
+      },
+      "action": {
+        "type": "r::A4::Hx777700X7777373::Action",
+        "id": ""
+      },
+      "resource": {
+        "type": "r::A4::Hx777700X7777373::a",
+        "id": ""
+      },
+      "context": {
+        "A": "",
+        "G": ""
+      },
+      "validateRequest": true,
+      "decision": "allow",
+      "reason": [
+        "policy0"
+      ],
+      "errors": []
+    },
+    {
+      "description": "Request 2",
+      "principal": {
+        "type": "r::A4::Hx777700X7777373::a",
+        "id": ""
+      },
+      "action": {
+        "type": "r::A4::Hx777700X7777373::Action",
+        "id": ""
+      },
+      "resource": {
+        "type": "r::A4::Hx777700X7777373::a",
+        "id": ""
+      },
+      "context": {
+        "A": "",
+        "G": ""
+      },
+      "validateRequest": true,
+      "decision": "allow",
+      "reason": [
+        "policy0"
+      ],
+      "errors": []
+    },
+    {
+      "description": "Request 3",
+      "principal": {
+        "type": "r::A4::Hx777700X7777373::a",
+        "id": ""
+      },
+      "action": {
+        "type": "r::A4::Hx777700X7777373::Action",
+        "id": ""
+      },
+      "resource": {
+        "type": "r::A4::Hx777700X7777373::a",
+        "id": ""
+      },
+      "context": {
+        "A": "",
+        "G": ""
+      },
+      "validateRequest": true,
+      "decision": "allow",
+      "reason": [
+        "policy0"
+      ],
+      "errors": []
+    },
+    {
+      "description": "Request 4",
+      "principal": {
+        "type": "r::A4::Hx777700X7777373::a",
+        "id": ""
+      },
+      "action": {
+        "type": "r::A4::Hx777700X7777373::Action",
+        "id": ""
+      },
+      "resource": {
+        "type": "r::A4::Hx777700X7777373::a",
+        "id": ""
+      },
+      "context": {
+        "A": "",
+        "G": ""
+      },
+      "validateRequest": true,
+      "decision": "allow",
+      "reason": [
+        "policy0"
+      ],
+      "errors": []
+    },
+    {
+      "description": "Request 5",
+      "principal": {
+        "type": "r::A4::Hx777700X7777373::a",
+        "id": ""
+      },
+      "action": {
+        "type": "r::A4::Hx777700X7777373::Action",
+        "id": ""
+      },
+      "resource": {
+        "type": "r::A4::Hx777700X7777373::a",
+        "id": ""
+      },
+      "context": {
+        "A": "",
+        "G": ""
+      },
+      "validateRequest": true,
+      "decision": "allow",
+      "reason": [
+        "policy0"
+      ],
+      "errors": []
+    },
+    {
+      "description": "Request 6",
+      "principal": {
+        "type": "r::A4::Hx777700X7777373::a",
+        "id": ""
+      },
+      "action": {
+        "type": "r::A4::Hx777700X7777373::Action",
+        "id": ""
+      },
+      "resource": {
+        "type": "r::A4::Hx777700X7777373::a",
+        "id": ""
+      },
+      "context": {
+        "A": "",
+        "G": ""
+      },
+      "validateRequest": true,
+      "decision": "allow",
+      "reason": [
+        "policy0"
+      ],
+      "errors": []
+    },
+    {
+      "description": "Request 7",
+      "principal": {
+        "type": "r::A4::Hx777700X7777373::a",
+        "id": ""
+      },
+      "action": {
+        "type": "r::A4::Hx777700X7777373::Action",
+        "id": ""
+      },
+      "resource": {
+        "type": "r::A4::Hx777700X7777373::a",
+        "id": ""
+      },
+      "context": {
+        "A": "",
+        "G": ""
+      },
+      "validateRequest": true,
+      "decision": "allow",
+      "reason": [
+        "policy0"
+      ],
+      "errors": []
+    }
+  ]
+}

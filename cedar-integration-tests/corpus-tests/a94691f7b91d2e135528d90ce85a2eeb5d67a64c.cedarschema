@@ -1,0 +1,7 @@
+entity a;
+action "action" appliesTo {
+  principal: [a],
+  resource: [a],
+  context: {"t"?: Set < {""?: __cedar::ipaddr, "\u{1f}_\0\u{1}": __cedar::ipaddr, "D"?: __cedar::ipaddr, "c"?: {""?: __cedar::ipaddr, "x"?: __cedar::decimal}} >}
+};
+

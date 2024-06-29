@@ -1,0 +1,10 @@
+entity R in [r];
+entity M3 in [hX, r];
+entity r;
+entity hX in [r];
+action "action" appliesTo {
+  principal: [M3, hX, r],
+  resource: [M3],
+  context: {"A00000000000000"?: __cedar::String}
+};
+

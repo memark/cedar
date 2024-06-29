@@ -1,0 +1,9 @@
+entity nD0c77 in [nudDAs, BhuuAs];
+entity BhuuAs;
+entity nudDAs in [BhuuAs];
+action "action" appliesTo {
+  principal: [nudDAs],
+  resource: [BhuuAs],
+  context: {"A0000000000000000"?: __cedar::String}
+};
+

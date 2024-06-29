@@ -1,0 +1,8 @@
+entity POIII;
+entity cSmmmXmmmmmmmm in [POIII];
+action "action" appliesTo {
+  principal: [cSmmmXmmmmmmmm, POIII],
+  resource: [cSmmmXmmmmmmmm],
+  context: {}
+};
+

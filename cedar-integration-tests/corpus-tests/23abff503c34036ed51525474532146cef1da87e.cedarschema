@@ -1,0 +1,10 @@
+entity rs0;
+entity ru3gus in [_ctWXXU00000000, rs0, r];
+entity r;
+entity _ctWXXU00000000 in [r];
+action "action" appliesTo {
+  principal: [ru3gus, _ctWXXU00000000, rs0, r],
+  resource: [ru3gus, _ctWXXU00000000, rs0, r],
+  context: {}
+};
+

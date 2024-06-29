@@ -1,0 +1,9 @@
+entity A;
+entity R7377777777A10;
+entity l;
+action "" appliesTo {
+  principal: [A, R7377777777A10, l],
+  resource: [A, R7377777777A10, l],
+  context: {}
+};
+

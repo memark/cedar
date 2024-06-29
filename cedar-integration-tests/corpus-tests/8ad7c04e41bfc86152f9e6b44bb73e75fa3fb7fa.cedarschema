@@ -1,0 +1,7 @@
+entity v = {"D"?: Set < __cedar::ipaddr >, "KX"?: {}, "b": v, "r": v};
+action "action" appliesTo {
+  principal: [v],
+  resource: [v],
+  context: {}
+};
+

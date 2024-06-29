@@ -1,0 +1,9 @@
+entity a;
+action "8884:88888?";
+action "442<4444444<44" appliesTo {
+  principal: [a],
+  resource: [a],
+  context: {}
+};
+action "";
+

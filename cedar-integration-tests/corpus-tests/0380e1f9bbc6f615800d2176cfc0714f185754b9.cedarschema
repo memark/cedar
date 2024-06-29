@@ -1,0 +1,17 @@
+entity a;
+action ";;;;" appliesTo {
+  principal: [a],
+  resource: [a],
+  context: {}
+};
+action "e";
+action "+6";
+action "p!l";
+action "";
+action "3;" appliesTo {
+  principal: [a],
+  resource: [a],
+  context: {}
+};
+action "6";
+

@@ -1,0 +1,7 @@
+entity a = {"r"?: {"": {"": {"t4:\0\u{7f}": __cedar::Bool}}}};
+action "" appliesTo {
+  principal: [a],
+  resource: [a],
+  context: {"r300000000"?: __cedar::String}
+};
+

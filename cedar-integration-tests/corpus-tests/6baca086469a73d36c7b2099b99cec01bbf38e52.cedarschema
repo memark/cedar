@@ -1,0 +1,9 @@
+entity U;
+entity M in [B, U];
+entity B in [U];
+action "action" appliesTo {
+  principal: [M, B],
+  resource: [M, B, U],
+  context: {}
+};
+

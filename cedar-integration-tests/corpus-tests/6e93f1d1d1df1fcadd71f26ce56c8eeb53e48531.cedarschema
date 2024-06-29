@@ -1,0 +1,8 @@
+entity VLLbc = {"A"?: __cedar::String};
+entity JgmX in [VLLbc] = {"s0"?: __cedar::String};
+action "action" appliesTo {
+  principal: [JgmX, VLLbc],
+  resource: [VLLbc],
+  context: {}
+};
+

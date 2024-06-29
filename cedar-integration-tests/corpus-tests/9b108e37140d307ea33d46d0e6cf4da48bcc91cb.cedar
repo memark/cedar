@@ -1,0 +1,7 @@
+permit(
+  principal,
+  action,
+  resource
+) when {
+  (true && (!(!(if principal then principal else principal)))) && principal
+};

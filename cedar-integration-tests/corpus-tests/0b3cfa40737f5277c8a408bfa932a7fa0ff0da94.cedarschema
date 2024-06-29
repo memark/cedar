@@ -1,0 +1,7 @@
+entity a = {"sq"?: {""?: {}, "443<"?: {}}};
+action "action" appliesTo {
+  principal: [a],
+  resource: [a],
+  context: {}
+};
+

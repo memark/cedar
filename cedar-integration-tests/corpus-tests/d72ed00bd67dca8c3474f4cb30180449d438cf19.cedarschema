@@ -1,0 +1,8 @@
+namespace l {
+entity l = {"j": Set < Set < Set < __cedar::ipaddr > > >, "l": Set < Set < Set < __cedar::ipaddr > > >};
+action "action" appliesTo {
+  principal: [l],
+  resource: [l],
+  context: {"A0000000000"?: __cedar::String, "r"?: __cedar::String}
+};
+}

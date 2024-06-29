@@ -1,0 +1,23 @@
+entity s;
+entity A in [s];
+action "2" appliesTo {
+  principal: [s],
+  resource: [A],
+  context: {}
+};
+action "" appliesTo {
+  principal: [A],
+  resource: [A, s],
+  context: {}
+};
+action "3" appliesTo {
+  principal: [A],
+  resource: [s],
+  context: {}
+};
+action "6" appliesTo {
+  principal: [A, s],
+  resource: [A, s],
+  context: {}
+};
+

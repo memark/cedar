@@ -1,0 +1,22 @@
+entity a;
+action "r" appliesTo {
+  principal: [a],
+  resource: [a],
+  context: {}
+};
+action "q" appliesTo {
+  principal: [a],
+  resource: [a],
+  context: {}
+};
+action "eu" appliesTo {
+  principal: [a],
+  resource: [a],
+  context: {}
+};
+action "" appliesTo {
+  principal: [a],
+  resource: [a],
+  context: {}
+};
+

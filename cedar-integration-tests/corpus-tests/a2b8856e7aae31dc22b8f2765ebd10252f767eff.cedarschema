@@ -1,0 +1,7 @@
+entity MXSXXHX10001100XX;
+action "action" appliesTo {
+  principal: [MXSXXHX10001100XX],
+  resource: [MXSXXHX10001100XX],
+  context: {"M3ut000"?: __cedar::String, "l3"?: __cedar::String}
+};
+

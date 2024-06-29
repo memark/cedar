@@ -1,0 +1,8 @@
+entity A in [F];
+entity F = {"c": Set < Set < Set < Set < __cedar::Long > > > >, "ugnYq0zzz": Set < Set < Set < Set < __cedar::Long > > > >};
+action "action" appliesTo {
+  principal: [A, F],
+  resource: [F],
+  context: {}
+};
+

@@ -1,0 +1,50 @@
+[
+  {
+    "uid": {
+      "type": "Mt::a",
+      "id": "r"
+    },
+    "attrs": {},
+    "parents": []
+  },
+  {
+    "uid": {
+      "type": "Mt::a",
+      "id": "ait"
+    },
+    "attrs": {},
+    "parents": []
+  },
+  {
+    "uid": {
+      "type": "Mt::a",
+      "id": ""
+    },
+    "attrs": {},
+    "parents": []
+  },
+  {
+    "uid": {
+      "type": "Mt::a",
+      "id": "rece_"
+    },
+    "attrs": {},
+    "parents": []
+  },
+  {
+    "uid": {
+      "type": "Mt::a",
+      "id": "cons"
+    },
+    "attrs": {},
+    "parents": []
+  },
+  {
+    "uid": {
+      "type": "Mt::a",
+      "id": "tr"
+    },
+    "attrs": {},
+    "parents": []
+  }
+]

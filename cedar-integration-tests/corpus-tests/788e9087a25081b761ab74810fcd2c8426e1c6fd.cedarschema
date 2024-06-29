@@ -1,0 +1,8 @@
+namespace Pctrdkn {
+entity Kf6Ivpiuw333m;
+action "action" appliesTo {
+  principal: [Kf6Ivpiuw333m],
+  resource: [Kf6Ivpiuw333m],
+  context: {"_le6U00000000"?: __cedar::String}
+};
+}

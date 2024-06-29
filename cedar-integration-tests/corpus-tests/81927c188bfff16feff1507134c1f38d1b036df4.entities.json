@@ -1,0 +1,70 @@
+[
+  {
+    "uid": {
+      "type": "a",
+      "id": "t"
+    },
+    "attrs": {
+      "r": {
+        "__entity": {
+          "type": "a",
+          "id": ""
+        }
+      },
+      "T": "",
+      "DucD33": ""
+    },
+    "parents": []
+  },
+  {
+    "uid": {
+      "type": "a",
+      "id": "4:"
+    },
+    "attrs": {
+      "T": "",
+      "r": {
+        "__entity": {
+          "type": "a",
+          "id": ""
+        }
+      },
+      "DucD33": ""
+    },
+    "parents": []
+  },
+  {
+    "uid": {
+      "type": "a",
+      "id": "f"
+    },
+    "attrs": {
+      "T": "",
+      "DucD33": "",
+      "r": {
+        "__entity": {
+          "type": "a",
+          "id": ""
+        }
+      }
+    },
+    "parents": []
+  },
+  {
+    "uid": {
+      "type": "a",
+      "id": ""
+    },
+    "attrs": {
+      "r": {
+        "__entity": {
+          "type": "a",
+          "id": ""
+        }
+      },
+      "T": "",
+      "DucD33": ""
+    },
+    "parents": []
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "uid": {
+      "type": "A::a",
+      "id": "\u0000\u0000\u0000\u0000\u0000\u0000\u0000&\u0003\u0000\u0000\u0000\u0000straitr"
+    },
+    "attrs": {},
+    "parents": []
+  },
+  {
+    "uid": {
+      "type": "A::a",
+      "id": "ai"
+    },
+    "attrs": {},
+    "parents": []
+  },
+  {
+    "uid": {
+      "type": "A::a",
+      "id": ""
+    },
+    "attrs": {},
+    "parents": []
+  }
+]

@@ -1,0 +1,47 @@
+[
+  {
+    "uid": {
+      "type": "a",
+      "id": "erzori"
+    },
+    "attrs": {
+      "wtmmm": {
+        "__entity": {
+          "type": "a",
+          "id": "erzori"
+        }
+      }
+    },
+    "parents": []
+  },
+  {
+    "uid": {
+      "type": "a",
+      "id": ""
+    },
+    "attrs": {
+      "wtmmm": {
+        "__entity": {
+          "type": "a",
+          "id": "erzori"
+        }
+      }
+    },
+    "parents": []
+  },
+  {
+    "uid": {
+      "type": "a",
+      "id": "n"
+    },
+    "attrs": {
+      "wtmmm": {
+        "__entity": {
+          "type": "a",
+          "id": "erzori"
+        }
+      }
+    },
+    "parents": []
+  }
+]
