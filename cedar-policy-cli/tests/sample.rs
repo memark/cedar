@@ -32,18 +32,6 @@ use cedar_policy_cli::{
 
 use rstest::rstest;
 
-fn run_check_parse_test(policies_file: impl Into<String>, expected_exit_code: CedarExitCode) {
-    let cmd = CheckParseArgs {
-        policies: PoliciesArgs {
-            policies_file: Some(policies_file.into()),
-            policy_format: PolicyFormat::Human,
-            template_linked_file: None,
-        },
-    };
-    let output = check_parse(&cmd);
-    assert_eq!(output, expected_exit_code, "{:#?}", cmd);
-}
-
 fn run_authorize_test(
     policies_file: impl Into<String>,
     entities_file: impl Into<String>,
@@ -118,14 +106,242 @@ fn run_link_test(
     assert_eq!(output, expected);
 }
 
-fn run_authorize_test_context(
-    policies_file: impl Into<String>,
-    entities_file: impl Into<String>,
-    principal: impl Into<String>,
-    action: impl Into<String>,
-    resource: impl Into<String>,
-    context_file: impl Into<String>,
-    exit_code: CedarExitCode,
+#[rstest]
+#[case("sample-data/sandbox_a/policies_1.cedar", CedarExitCode::Success)]
+#[case("sample-data/sandbox_a/policies_2.cedar", CedarExitCode::Success)]
+#[case("sample-data/sandbox_a/policies_3.cedar", CedarExitCode::Success)]
+#[case("sample-data/sandbox_b/policies_4.cedar", CedarExitCode::Success)]
+#[case("sample-data/sandbox_b/policies_5.cedar", CedarExitCode::Success)]
+fn test_check_parse_samples(
+    #[case] policies_file: impl Into<String>,
+    #[case] expected_exit_code: CedarExitCode,
+) {
+    let cmd = CheckParseArgs {
+        policies: PoliciesArgs {
+            policies_file: Some(policies_file.into()),
+            policy_format: PolicyFormat::Human,
+            template_linked_file: None,
+        },
+    };
+    let output = check_parse(&cmd);
+    assert_eq!(output, expected_exit_code, "{:#?}", cmd);
+}
+
+#[rstest]
+#[case(
+    "sample-data/sandbox_a/policies_1.cedar",
+    "sample-data/sandbox_a/entities.json",
+    "User::\"alice\"",
+    "Action::\"view\"",
+    "Photo::\"VacationPhoto94.jpg\"",
+    CedarExitCode::Success
+)]
+#[case(
+    "sample-data/sandbox_a/policies_2.cedar",
+    "sample-data/sandbox_a/entities.json",
+    "User::\"alice\"",
+    "Action::\"view\"",
+    "Photo::\"VacationPhoto94.jpg\"",
+    CedarExitCode::Success
+)]
+#[case(
+    "sample-data/sandbox_a/policies_2.cedar",
+    "sample-data/sandbox_a/entities.json",
+    "User::\"alice\"",
+    "Action::\"edit\"",
+    "Photo::\"VacationPhoto94.jpg\"",
+    CedarExitCode::Success
+)]
+#[case(
+    "sample-data/sandbox_a/policies_2.cedar",
+    "sample-data/sandbox_a/entities.json",
+    "User::\"alice\"",
+    "Action::\"delete\"",
+    "Photo::\"VacationPhoto94.jpg\"",
+    CedarExitCode::Success
+)]
+#[case(
+    "sample-data/sandbox_a/policies_2.cedar",
+    "sample-data/sandbox_a/entities.json",
+    "User::\"alice\"",
+    "Action::\"comment\"",
+    "Photo::\"VacationPhoto94.jpg\"",
+    CedarExitCode::AuthorizeDeny
+)]
+#[case(
+    "sample-data/sandbox_a/policies_2.cedar",
+    "sample-data/sandbox_a/entities.json",
+    "User::\"bob\"",
+    "Action::\"view\"",
+    "Photo::\"VacationPhoto94.jpg\"",
+    CedarExitCode::Success
+)]
+#[case(
+    "sample-data/sandbox_a/policies_2.cedar",
+    "sample-data/sandbox_a/entities.json",
+    "User::\"bob\"",
+    "Action::\"edit\"",
+    "Photo::\"VacationPhoto94.jpg\"",
+    CedarExitCode::AuthorizeDeny
+)]
+#[case(
+    "sample-data/sandbox_a/policies_2.cedar",
+    "sample-data/sandbox_a/entities.json",
+    "User::\"bob\"",
+    "Action::\"delete\"",
+    "Photo::\"VacationPhoto94.jpg\"",
+    CedarExitCode::AuthorizeDeny
+)]
+#[case(
+    "sample-data/sandbox_a/policies_2.cedar",
+    "sample-data/sandbox_a/entities.json",
+    "User::\"bob\"",
+    "Action::\"comment\"",
+    "Photo::\"VacationPhoto94.jpg\"",
+    CedarExitCode::AuthorizeDeny
+)]
+#[case(
+    "sample-data/sandbox_a/policies_3.cedar",
+    "sample-data/sandbox_a/entities.json",
+    "User::\"alice\"",
+    "Action::\"view\"",
+    "Photo::\"VacationPhoto94.jpg\"",
+    CedarExitCode::Success
+)]
+#[case(
+    "sample-data/sandbox_a/policies_3.cedar",
+    "sample-data/sandbox_a/entities.json",
+    "User::\"bob\"",
+    "Action::\"view\"",
+    "Photo::\"VacationPhoto94.jpg\"",
+    CedarExitCode::Success
+)]
+#[case(
+    "sample-data/sandbox_a/policies_3.cedar",
+    "sample-data/sandbox_a/entities.json",
+    "User::\"tim\"",
+    "Action::\"view\"",
+    "Photo::\"VacationPhoto94.jpg\"",
+    CedarExitCode::Success
+)]
+#[case(
+    "sample-data/sandbox_a/policies_3.cedar",
+    "sample-data/sandbox_a/entities.json",
+    "User::\"alice\"",
+    "Action::\"listPhotos\"",
+    "Album::\"jane_vacation\"",
+    CedarExitCode::Success
+)]
+#[case(
+    "sample-data/sandbox_a/policies_3.cedar",
+    "sample-data/sandbox_a/entities.json",
+    "User::\"bob\"",
+    "Action::\"listPhotos\"",
+    "Album::\"jane_vacation\"",
+    CedarExitCode::Success
+)]
+#[case(
+    "sample-data/sandbox_a/policies_3.cedar",
+    "sample-data/sandbox_a/entities.json",
+    "User::\"tim\"",
+    "Action::\"listPhotos\"",
+    "Album::\"jane_vacation\"",
+    CedarExitCode::Success
+)]
+#[case(
+    "sample-data/sandbox_b/policies_4.cedar",
+    "sample-data/sandbox_b/entities.json",
+    "User::\"alice\"",
+    "Action::\"view\"",
+    "Photo::\"prototype_v0.jpg\"",
+    CedarExitCode::Success
+)]
+#[case(
+    "sample-data/sandbox_b/policies_4.cedar",
+    "sample-data/sandbox_b/entities.json",
+    "User::\"stacey\"",
+    "Action::\"view\"",
+    "Photo::\"prototype_v0.jpg\"",
+    CedarExitCode::AuthorizeDeny
+)]
+#[case(
+    "sample-data/sandbox_b/policies_4.cedar",
+    "sample-data/sandbox_b/entities.json",
+    "User::\"ahmad\"",
+    "Action::\"view\"",
+    "Photo::\"prototype_v0.jpg\"",
+    CedarExitCode::AuthorizeDeny
+)]
+#[case(
+    "sample-data/sandbox_b/policies_5.cedar",
+    "sample-data/sandbox_b/entities.json",
+    "User::\"stacey\"",
+    "Action::\"view\"",
+    "Photo::\"alice_w2.jpg\"",
+    CedarExitCode::AuthorizeDeny
+)]
+#[case(
+    "sample-data/sandbox_b/policies_5.cedar",
+    "sample-data/sandbox_b/entities.json",
+    "User::\"alice\"",
+    "Action::\"view\"",
+    "Photo::\"alice_w2.jpg\"",
+    CedarExitCode::Success
+)]
+#[case(
+    "sample-data/sandbox_b/policies_5.cedar",
+    "sample-data/sandbox_b/entities.json",
+    "User::\"stacey\"",
+    "Action::\"view\"",
+    "Photo::\"vacation.jpg\"",
+    CedarExitCode::Success
+)]
+fn test_authorize_samples(
+    #[case] policies_file: impl Into<String>,
+    #[case] entities_file: impl Into<String>,
+    #[case] principal: impl Into<String>,
+    #[case] action: impl Into<String>,
+    #[case] resource: impl Into<String>,
+    #[case] exit_code: CedarExitCode,
+) {
+    run_authorize_test_with_linked_policies(
+        policies_file,
+        entities_file,
+        None::<String>,
+        principal,
+        action,
+        resource,
+        exit_code,
+    );
+}
+
+#[rstest]
+#[case(
+    "sample-data/sandbox_b/policies_6.cedar",
+    "sample-data/sandbox_b/entities.json",
+    "User::\"alice\"",
+    "Action::\"view\"",
+    "Photo::\"vacation.jpg\"",
+    "sample-data/sandbox_b/doesnotexist.json",
+    CedarExitCode::Failure
+)]
+#[case(
+    "sample-data/sandbox_b/policies_6.cedar",
+    "sample-data/sandbox_b/entities.json",
+    "User::\"alice\"",
+    "Action::\"view\"",
+    "Photo::\"vacation.jpg\"",
+    "sample-data/sandbox_b/context.json",
+    CedarExitCode::Success
+)]
+fn test_authorize_context_samples(
+    #[case] policies_file: impl Into<String>,
+    #[case] entities_file: impl Into<String>,
+    #[case] principal: impl Into<String>,
+    #[case] action: impl Into<String>,
+    #[case] resource: impl Into<String>,
+    #[case] context_file: impl Into<String>,
+    #[case] exit_code: CedarExitCode,
 ) {
     let cmd = AuthorizeArgs {
         request: RequestArgs {
@@ -151,11 +367,66 @@ fn run_authorize_test_context(
     assert_eq!(exit_code, output, "{:#?}", cmd,);
 }
 
-fn run_authorize_test_json(
-    policies_file: impl Into<String>,
-    entities_file: impl Into<String>,
-    request_json_file: impl Into<String>,
-    exit_code: CedarExitCode,
+#[rstest]
+#[case(
+    "sample-data/tiny_sandboxes/sample1/policy.cedar",
+    "sample-data/tiny_sandboxes/sample1/entity.json",
+    "sample-data/tiny_sandboxes/sample1/request.json",
+    CedarExitCode::Success
+)]
+#[case(
+    "sample-data/tiny_sandboxes/sample2/policy.cedar",
+    "sample-data/tiny_sandboxes/sample2/entity.json",
+    "sample-data/tiny_sandboxes/sample2/request.json",
+    CedarExitCode::Success
+)]
+#[case(
+    "sample-data/tiny_sandboxes/sample3/policy.cedar",
+    "sample-data/tiny_sandboxes/sample3/entity.json",
+    "sample-data/tiny_sandboxes/sample3/request.json",
+    CedarExitCode::AuthorizeDeny
+)]
+#[case(
+    "sample-data/tiny_sandboxes/sample4/policy.cedar",
+    "sample-data/tiny_sandboxes/sample4/entity.json",
+    "sample-data/tiny_sandboxes/sample4/request.json",
+    CedarExitCode::Success
+)]
+#[case(
+    "sample-data/tiny_sandboxes/sample5/policy.cedar",
+    "sample-data/tiny_sandboxes/sample5/entity.json",
+    "sample-data/tiny_sandboxes/sample5/request.json",
+    CedarExitCode::Success
+)]
+#[case(
+    "sample-data/tiny_sandboxes/sample6/policy.cedar",
+    "sample-data/tiny_sandboxes/sample6/entity.json",
+    "sample-data/tiny_sandboxes/sample6/request.json",
+    CedarExitCode::AuthorizeDeny
+)]
+#[case(
+    "sample-data/tiny_sandboxes/sample7/policy.cedar",
+    "sample-data/tiny_sandboxes/sample7/entity.json",
+    "sample-data/tiny_sandboxes/sample7/request.json",
+    CedarExitCode::Success
+)]
+#[case(
+    "sample-data/tiny_sandboxes/sample8/policy.cedar",
+    "sample-data/tiny_sandboxes/sample8/entity.json",
+    "sample-data/tiny_sandboxes/sample8/request.json",
+    CedarExitCode::Success
+)]
+#[case(
+    "sample-data/tiny_sandboxes/sample9/policy.cedar",
+    "sample-data/tiny_sandboxes/sample9/entity.json",
+    "sample-data/tiny_sandboxes/sample9/request.json",
+    CedarExitCode::Success
+)]
+fn test_authorize_json_samples(
+    #[case] policies_file: impl Into<String>,
+    #[case] entities_file: impl Into<String>,
+    #[case] request_json_file: impl Into<String>,
+    #[case] exit_code: CedarExitCode,
 ) {
     let cmd = AuthorizeArgs {
         request: RequestArgs {
@@ -179,272 +450,6 @@ fn run_authorize_test_json(
     };
     let output = authorize(&cmd);
     assert_eq!(exit_code, output, "{:#?}", cmd,);
-}
-
-#[test]
-fn test_authorize_samples() {
-    run_check_parse_test(
-        "sample-data/sandbox_a/policies_1.cedar",
-        CedarExitCode::Success,
-    );
-    run_authorize_test(
-        "sample-data/sandbox_a/policies_1.cedar",
-        "sample-data/sandbox_a/entities.json",
-        "User::\"alice\"",
-        "Action::\"view\"",
-        "Photo::\"VacationPhoto94.jpg\"",
-        CedarExitCode::Success,
-    );
-    run_check_parse_test(
-        "sample-data/sandbox_a/policies_2.cedar",
-        CedarExitCode::Success,
-    );
-    run_authorize_test(
-        "sample-data/sandbox_a/policies_2.cedar",
-        "sample-data/sandbox_a/entities.json",
-        "User::\"alice\"",
-        "Action::\"view\"",
-        "Photo::\"VacationPhoto94.jpg\"",
-        CedarExitCode::Success,
-    );
-    run_authorize_test(
-        "sample-data/sandbox_a/policies_2.cedar",
-        "sample-data/sandbox_a/entities.json",
-        "User::\"alice\"",
-        "Action::\"edit\"",
-        "Photo::\"VacationPhoto94.jpg\"",
-        CedarExitCode::Success,
-    );
-    run_authorize_test(
-        "sample-data/sandbox_a/policies_2.cedar",
-        "sample-data/sandbox_a/entities.json",
-        "User::\"alice\"",
-        "Action::\"delete\"",
-        "Photo::\"VacationPhoto94.jpg\"",
-        CedarExitCode::Success,
-    );
-    run_authorize_test(
-        "sample-data/sandbox_a/policies_2.cedar",
-        "sample-data/sandbox_a/entities.json",
-        "User::\"alice\"",
-        "Action::\"comment\"",
-        "Photo::\"VacationPhoto94.jpg\"",
-        CedarExitCode::AuthorizeDeny,
-    );
-    run_authorize_test(
-        "sample-data/sandbox_a/policies_2.cedar",
-        "sample-data/sandbox_a/entities.json",
-        "User::\"bob\"",
-        "Action::\"view\"",
-        "Photo::\"VacationPhoto94.jpg\"",
-        CedarExitCode::Success,
-    );
-    run_authorize_test(
-        "sample-data/sandbox_a/policies_2.cedar",
-        "sample-data/sandbox_a/entities.json",
-        "User::\"bob\"",
-        "Action::\"edit\"",
-        "Photo::\"VacationPhoto94.jpg\"",
-        CedarExitCode::AuthorizeDeny,
-    );
-    run_authorize_test(
-        "sample-data/sandbox_a/policies_2.cedar",
-        "sample-data/sandbox_a/entities.json",
-        "User::\"bob\"",
-        "Action::\"delete\"",
-        "Photo::\"VacationPhoto94.jpg\"",
-        CedarExitCode::AuthorizeDeny,
-    );
-    run_authorize_test(
-        "sample-data/sandbox_a/policies_2.cedar",
-        "sample-data/sandbox_a/entities.json",
-        "User::\"bob\"",
-        "Action::\"comment\"",
-        "Photo::\"VacationPhoto94.jpg\"",
-        CedarExitCode::AuthorizeDeny,
-    );
-    run_check_parse_test(
-        "sample-data/sandbox_a/policies_3.cedar",
-        CedarExitCode::Success,
-    );
-    run_authorize_test(
-        "sample-data/sandbox_a/policies_3.cedar",
-        "sample-data/sandbox_a/entities.json",
-        "User::\"alice\"",
-        "Action::\"view\"",
-        "Photo::\"VacationPhoto94.jpg\"",
-        CedarExitCode::Success,
-    );
-    run_authorize_test(
-        "sample-data/sandbox_a/policies_3.cedar",
-        "sample-data/sandbox_a/entities.json",
-        "User::\"bob\"",
-        "Action::\"view\"",
-        "Photo::\"VacationPhoto94.jpg\"",
-        CedarExitCode::Success,
-    );
-    run_authorize_test(
-        "sample-data/sandbox_a/policies_3.cedar",
-        "sample-data/sandbox_a/entities.json",
-        "User::\"tim\"",
-        "Action::\"view\"",
-        "Photo::\"VacationPhoto94.jpg\"",
-        CedarExitCode::Success,
-    );
-    run_authorize_test(
-        "sample-data/sandbox_a/policies_3.cedar",
-        "sample-data/sandbox_a/entities.json",
-        "User::\"alice\"",
-        "Action::\"listPhotos\"",
-        "Album::\"jane_vacation\"",
-        CedarExitCode::Success,
-    );
-    run_authorize_test(
-        "sample-data/sandbox_a/policies_3.cedar",
-        "sample-data/sandbox_a/entities.json",
-        "User::\"bob\"",
-        "Action::\"listPhotos\"",
-        "Album::\"jane_vacation\"",
-        CedarExitCode::Success,
-    );
-    run_authorize_test(
-        "sample-data/sandbox_a/policies_3.cedar",
-        "sample-data/sandbox_a/entities.json",
-        "User::\"tim\"",
-        "Action::\"listPhotos\"",
-        "Album::\"jane_vacation\"",
-        CedarExitCode::Success,
-    );
-
-    run_check_parse_test(
-        "sample-data/sandbox_b/policies_4.cedar",
-        CedarExitCode::Success,
-    );
-    run_authorize_test(
-        "sample-data/sandbox_b/policies_4.cedar",
-        "sample-data/sandbox_b/entities.json",
-        "User::\"alice\"",
-        "Action::\"view\"",
-        "Photo::\"prototype_v0.jpg\"",
-        CedarExitCode::Success,
-    );
-    run_authorize_test(
-        "sample-data/sandbox_b/policies_4.cedar",
-        "sample-data/sandbox_b/entities.json",
-        "User::\"stacey\"",
-        "Action::\"view\"",
-        "Photo::\"prototype_v0.jpg\"",
-        CedarExitCode::AuthorizeDeny,
-    );
-    run_authorize_test(
-        "sample-data/sandbox_b/policies_4.cedar",
-        "sample-data/sandbox_b/entities.json",
-        "User::\"ahmad\"",
-        "Action::\"view\"",
-        "Photo::\"prototype_v0.jpg\"",
-        CedarExitCode::AuthorizeDeny,
-    );
-    run_authorize_test(
-        "sample-data/sandbox_b/policies_5.cedar",
-        "sample-data/sandbox_b/entities.json",
-        "User::\"stacey\"",
-        "Action::\"view\"",
-        "Photo::\"alice_w2.jpg\"",
-        CedarExitCode::AuthorizeDeny,
-    );
-    run_check_parse_test(
-        "sample-data/sandbox_b/policies_5.cedar",
-        CedarExitCode::Success,
-    );
-    run_authorize_test(
-        "sample-data/sandbox_b/policies_5.cedar",
-        "sample-data/sandbox_b/entities.json",
-        "User::\"alice\"",
-        "Action::\"view\"",
-        "Photo::\"alice_w2.jpg\"",
-        CedarExitCode::Success,
-    );
-    run_authorize_test(
-        "sample-data/sandbox_b/policies_5.cedar",
-        "sample-data/sandbox_b/entities.json",
-        "User::\"stacey\"",
-        "Action::\"view\"",
-        "Photo::\"vacation.jpg\"",
-        CedarExitCode::Success,
-    );
-    run_authorize_test_context(
-        "sample-data/sandbox_b/policies_6.cedar",
-        "sample-data/sandbox_b/entities.json",
-        "User::\"alice\"",
-        "Action::\"view\"",
-        "Photo::\"vacation.jpg\"",
-        "sample-data/sandbox_b/doesnotexist.json",
-        CedarExitCode::Failure,
-    );
-    run_authorize_test_context(
-        "sample-data/sandbox_b/policies_6.cedar",
-        "sample-data/sandbox_b/entities.json",
-        "User::\"alice\"",
-        "Action::\"view\"",
-        "Photo::\"vacation.jpg\"",
-        "sample-data/sandbox_b/context.json",
-        CedarExitCode::Success,
-    );
-
-    run_authorize_test_json(
-        "sample-data/tiny_sandboxes/sample1/policy.cedar",
-        "sample-data/tiny_sandboxes/sample1/entity.json",
-        "sample-data/tiny_sandboxes/sample1/request.json",
-        CedarExitCode::Success,
-    );
-    run_authorize_test_json(
-        "sample-data/tiny_sandboxes/sample2/policy.cedar",
-        "sample-data/tiny_sandboxes/sample2/entity.json",
-        "sample-data/tiny_sandboxes/sample2/request.json",
-        CedarExitCode::Success,
-    );
-    run_authorize_test_json(
-        "sample-data/tiny_sandboxes/sample3/policy.cedar",
-        "sample-data/tiny_sandboxes/sample3/entity.json",
-        "sample-data/tiny_sandboxes/sample3/request.json",
-        CedarExitCode::AuthorizeDeny,
-    );
-    run_authorize_test_json(
-        "sample-data/tiny_sandboxes/sample4/policy.cedar",
-        "sample-data/tiny_sandboxes/sample4/entity.json",
-        "sample-data/tiny_sandboxes/sample4/request.json",
-        CedarExitCode::Success,
-    );
-    run_authorize_test_json(
-        "sample-data/tiny_sandboxes/sample5/policy.cedar",
-        "sample-data/tiny_sandboxes/sample5/entity.json",
-        "sample-data/tiny_sandboxes/sample5/request.json",
-        CedarExitCode::Success,
-    );
-    run_authorize_test_json(
-        "sample-data/tiny_sandboxes/sample6/policy.cedar",
-        "sample-data/tiny_sandboxes/sample6/entity.json",
-        "sample-data/tiny_sandboxes/sample6/request.json",
-        CedarExitCode::AuthorizeDeny,
-    );
-    run_authorize_test_json(
-        "sample-data/tiny_sandboxes/sample7/policy.cedar",
-        "sample-data/tiny_sandboxes/sample7/entity.json",
-        "sample-data/tiny_sandboxes/sample7/request.json",
-        CedarExitCode::Success,
-    );
-    run_authorize_test_json(
-        "sample-data/tiny_sandboxes/sample8/policy.cedar",
-        "sample-data/tiny_sandboxes/sample8/entity.json",
-        "sample-data/tiny_sandboxes/sample8/request.json",
-        CedarExitCode::Success,
-    );
-    run_authorize_test_json(
-        "sample-data/tiny_sandboxes/sample9/policy.cedar",
-        "sample-data/tiny_sandboxes/sample9/entity.json",
-        "sample-data/tiny_sandboxes/sample9/request.json",
-        CedarExitCode::Success,
-    );
 }
 
 #[rstest]
