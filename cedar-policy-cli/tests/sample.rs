@@ -32,6 +32,18 @@ use cedar_policy_cli::{
 
 use rstest::rstest;
 
+fn run_check_parse_test(policies_file: impl Into<String>, expected_exit_code: CedarExitCode) {
+    let cmd = CheckParseArgs {
+        policies: PoliciesArgs {
+            policies_file: Some(policies_file.into()),
+            policy_format: PolicyFormat::Human,
+            template_linked_file: None,
+        },
+    };
+    let output = check_parse(&cmd);
+    assert_eq!(output, expected_exit_code, "{:#?}", cmd);
+}
+
 fn run_authorize_test(
     policies_file: impl Into<String>,
     entities_file: impl Into<String>,
@@ -106,6 +118,69 @@ fn run_link_test(
     assert_eq!(output, expected);
 }
 
+fn run_authorize_test_context(
+    policies_file: impl Into<String>,
+    entities_file: impl Into<String>,
+    principal: impl Into<String>,
+    action: impl Into<String>,
+    resource: impl Into<String>,
+    context_file: impl Into<String>,
+    exit_code: CedarExitCode,
+) {
+    let cmd = AuthorizeArgs {
+        request: RequestArgs {
+            principal: Some(principal.into()),
+            action: Some(action.into()),
+            resource: Some(resource.into()),
+            context_json_file: Some(context_file.into()),
+            request_json_file: None,
+            request_validation: true,
+        },
+        policies: PoliciesArgs {
+            policies_file: Some(policies_file.into()),
+            policy_format: PolicyFormat::Human,
+            template_linked_file: None,
+        },
+        schema_file: None,
+        schema_format: SchemaFormat::default(),
+        entities_file: entities_file.into(),
+        verbose: true,
+        timing: false,
+    };
+    let output = authorize(&cmd);
+    assert_eq!(exit_code, output, "{:#?}", cmd,);
+}
+
+fn run_authorize_test_json(
+    policies_file: impl Into<String>,
+    entities_file: impl Into<String>,
+    request_json_file: impl Into<String>,
+    exit_code: CedarExitCode,
+) {
+    let cmd = AuthorizeArgs {
+        request: RequestArgs {
+            principal: None,
+            action: None,
+            resource: None,
+            context_json_file: None,
+            request_json_file: Some(request_json_file.into()),
+            request_validation: true,
+        },
+        policies: PoliciesArgs {
+            policies_file: Some(policies_file.into()),
+            policy_format: PolicyFormat::Human,
+            template_linked_file: None,
+        },
+        schema_file: None,
+        schema_format: SchemaFormat::default(),
+        entities_file: entities_file.into(),
+        verbose: true,
+        timing: false,
+    };
+    let output = authorize(&cmd);
+    assert_eq!(exit_code, output, "{:#?}", cmd,);
+}
+
 #[rstest]
 #[case("sample-data/sandbox_a/policies_1.cedar", CedarExitCode::Success)]
 #[case("sample-data/sandbox_a/policies_2.cedar", CedarExitCode::Success)]
@@ -116,15 +191,7 @@ fn test_check_parse_samples(
     #[case] policies_file: impl Into<String>,
     #[case] expected_exit_code: CedarExitCode,
 ) {
-    let cmd = CheckParseArgs {
-        policies: PoliciesArgs {
-            policies_file: Some(policies_file.into()),
-            policy_format: PolicyFormat::Human,
-            template_linked_file: None,
-        },
-    };
-    let output = check_parse(&cmd);
-    assert_eq!(output, expected_exit_code, "{:#?}", cmd);
+    run_check_parse_test(policies_file, expected_exit_code);
 }
 
 #[rstest]
@@ -343,28 +410,15 @@ fn test_authorize_context_samples(
     #[case] context_file: impl Into<String>,
     #[case] exit_code: CedarExitCode,
 ) {
-    let cmd = AuthorizeArgs {
-        request: RequestArgs {
-            principal: Some(principal.into()),
-            action: Some(action.into()),
-            resource: Some(resource.into()),
-            context_json_file: Some(context_file.into()),
-            request_json_file: None,
-            request_validation: true,
-        },
-        policies: PoliciesArgs {
-            policies_file: Some(policies_file.into()),
-            policy_format: PolicyFormat::Human,
-            template_linked_file: None,
-        },
-        schema_file: None,
-        schema_format: SchemaFormat::default(),
-        entities_file: entities_file.into(),
-        verbose: true,
-        timing: false,
-    };
-    let output = authorize(&cmd);
-    assert_eq!(exit_code, output, "{:#?}", cmd,);
+    run_authorize_test_context(
+        policies_file,
+        entities_file,
+        principal,
+        action,
+        resource,
+        context_file,
+        exit_code,
+    );
 }
 
 #[rstest]
@@ -428,28 +482,7 @@ fn test_authorize_json_samples(
     #[case] request_json_file: impl Into<String>,
     #[case] exit_code: CedarExitCode,
 ) {
-    let cmd = AuthorizeArgs {
-        request: RequestArgs {
-            principal: None,
-            action: None,
-            resource: None,
-            context_json_file: None,
-            request_json_file: Some(request_json_file.into()),
-            request_validation: true,
-        },
-        policies: PoliciesArgs {
-            policies_file: Some(policies_file.into()),
-            policy_format: PolicyFormat::Human,
-            template_linked_file: None,
-        },
-        schema_file: None,
-        schema_format: SchemaFormat::default(),
-        entities_file: entities_file.into(),
-        verbose: true,
-        timing: false,
-    };
-    let output = authorize(&cmd);
-    assert_eq!(exit_code, output, "{:#?}", cmd,);
+    run_authorize_test_json(policies_file, entities_file, request_json_file, exit_code);
 }
 
 #[rstest]
