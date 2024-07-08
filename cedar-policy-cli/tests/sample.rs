@@ -825,33 +825,54 @@ fn test_evaluate_samples(
     );
 }
 
-#[test]
-fn test_link_samples() {
-    let linked_file = tempfile::NamedTempFile::new().expect("Failed to create linked file");
-    let linked_file_name = linked_file.path().as_os_str().to_string_lossy().to_string();
-
-    run_link_test(
-        "sample-data/sandbox_c/doesnotexist.cedar",
-        &linked_file_name,
+#[rstest]
+#[case("sample-data/sandbox_c/doesnotexist.cedar",
         "AccessVacation",
         "AliceAccess",
         [(SlotId::principal(), "User::\"alice\"".to_string())]
             .into_iter()
-            .collect(),
-        CedarExitCode::Failure,
-    );
-
-    run_link_test(
-        "sample-data/sandbox_c/policies.cedar",
-        &linked_file_name,
+            .collect::<HashMap<SlotId, String>>(),
+        CedarExitCode::Failure,)]
+#[case("sample-data/sandbox_c/policies.cedar",
         "AccessVacation",
         "AliceAccess",
         [(SlotId::principal(), "invalid".to_string())]
             .into_iter()
             .collect(),
-        CedarExitCode::Failure,
-    );
+        CedarExitCode::Failure,)]
+#[case("sample-data/sandbox_c/policies.cedar",
+        "AccessVacation",
+        "AliceAccess",
+        [(SlotId::principal(), "User::\"alice\"".to_string())]
+            .into_iter()
+            .collect(),
+        CedarExitCode::Success,)]
+fn some_test(
+    #[case] policies_file: impl Into<String>,
+    #[case] template_id: impl Into<String>,
+    #[case] linked_id: impl Into<String>,
+    #[case] env: HashMap<SlotId, String>,
+    #[case] expected: CedarExitCode,
+) {
+    let linked_file = tempfile::NamedTempFile::new().expect("Failed to create linked file");
+    let linked_file_name = linked_file.path().as_os_str().to_string_lossy().to_string();
 
+    run_link_test(
+        policies_file,
+        &linked_file_name,
+        template_id,
+        linked_id,
+        env,
+        expected,
+    );
+}
+
+#[test]
+fn test_link_samples() {
+    let linked_file = tempfile::NamedTempFile::new().expect("Failed to create linked file");
+    let linked_file_name = linked_file.path().as_os_str().to_string_lossy().to_string();
+
+    // This test must be run first for the following to succeed.
     run_link_test(
         "sample-data/sandbox_c/policies.cedar",
         &linked_file_name,
