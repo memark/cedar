@@ -181,6 +181,75 @@ fn run_authorize_test_json(
     assert_eq!(exit_code, output, "{:#?}", cmd,);
 }
 
+#[track_caller]
+fn run_validate_test(
+    policies_file: impl Into<String>,
+    schema_file: impl Into<String>,
+    exit_code: CedarExitCode,
+) {
+    let policies_file = policies_file.into();
+    let schema_file = schema_file.into();
+
+    // Run with JSON schema
+    let cmd = ValidateArgs {
+        schema_file: schema_file.clone(),
+        policies: PoliciesArgs {
+            policies_file: Some(policies_file.clone()),
+            policy_format: PolicyFormat::Human,
+            template_linked_file: None,
+        },
+        deny_warnings: false,
+        validation_mode: cedar_policy_cli::ValidationMode::Strict,
+        schema_format: SchemaFormat::Json,
+    };
+    let output = validate(&cmd);
+    assert_eq!(exit_code, output, "{:#?}", cmd);
+
+    // Run with human schema
+    let cmd = ValidateArgs {
+        schema_file: schema_file
+            .strip_suffix(".json")
+            .expect("`schema_file` should be the JSON schema")
+            .to_string(),
+        policies: PoliciesArgs {
+            policies_file: Some(policies_file),
+            policy_format: PolicyFormat::Human,
+            template_linked_file: None,
+        },
+        deny_warnings: false,
+        validation_mode: cedar_policy_cli::ValidationMode::Strict,
+        schema_format: SchemaFormat::Human,
+    };
+    let output = validate(&cmd);
+    assert_eq!(exit_code, output, "{:#?}", cmd)
+}
+
+fn run_evaluate_test(
+    request_json_file: impl Into<String>,
+    entities_file: impl Into<String>,
+    expression: impl Into<String>,
+    exit_code: CedarExitCode,
+    expected: EvalResult,
+) {
+    let cmd = EvaluateArgs {
+        schema_file: None,
+        schema_format: SchemaFormat::default(),
+        entities_file: Some(entities_file.into()),
+        request: RequestArgs {
+            principal: None,
+            action: None,
+            resource: None,
+            context_json_file: None,
+            request_json_file: Some(request_json_file.into()),
+            request_validation: true,
+        },
+        expression: expression.into(),
+    };
+    let output = evaluate(&cmd);
+    assert_eq!(exit_code, output.0, "{:#?}", cmd,);
+    assert_eq!(expected, output.1, "{:#?}", cmd,);
+}
+
 #[rstest]
 #[case("sample-data/sandbox_a/policies_1.cedar", CedarExitCode::Success)]
 #[case("sample-data/sandbox_a/policies_2.cedar", CedarExitCode::Success)]
@@ -594,41 +663,7 @@ fn test_validate_samples(
     #[case] schema_file: impl Into<String>,
     #[case] exit_code: CedarExitCode,
 ) {
-    let policies_file = policies_file.into();
-    let schema_file = schema_file.into();
-
-    // Run with JSON schema
-    let cmd = ValidateArgs {
-        schema_file: schema_file.clone(),
-        policies: PoliciesArgs {
-            policies_file: Some(policies_file.clone()),
-            policy_format: PolicyFormat::Human,
-            template_linked_file: None,
-        },
-        deny_warnings: false,
-        validation_mode: cedar_policy_cli::ValidationMode::Strict,
-        schema_format: SchemaFormat::Json,
-    };
-    let output = validate(&cmd);
-    assert_eq!(exit_code, output, "{:#?}", cmd);
-
-    // Run with human schema
-    let cmd = ValidateArgs {
-        schema_file: schema_file
-            .strip_suffix(".json")
-            .expect("`schema_file` should be the JSON schema")
-            .to_string(),
-        policies: PoliciesArgs {
-            policies_file: Some(policies_file),
-            policy_format: PolicyFormat::Human,
-            template_linked_file: None,
-        },
-        deny_warnings: false,
-        validation_mode: cedar_policy_cli::ValidationMode::Strict,
-        schema_format: SchemaFormat::Human,
-    };
-    let output = validate(&cmd);
-    assert_eq!(exit_code, output, "{:#?}", cmd)
+    run_validate_test(policies_file, schema_file, exit_code);
 }
 
 #[rstest]
@@ -726,23 +761,13 @@ fn test_evaluate_samples(
     #[case] exit_code: CedarExitCode,
     #[case] expected: EvalResult,
 ) {
-    let cmd = EvaluateArgs {
-        schema_file: None,
-        schema_format: SchemaFormat::default(),
-        entities_file: Some(entities_file.into()),
-        request: RequestArgs {
-            principal: None,
-            action: None,
-            resource: None,
-            context_json_file: None,
-            request_json_file: Some(request_json_file.into()),
-            request_validation: true,
-        },
-        expression: expression.into(),
-    };
-    let output = evaluate(&cmd);
-    assert_eq!(exit_code, output.0, "{:#?}", cmd,);
-    assert_eq!(expected, output.1, "{:#?}", cmd,);
+    run_evaluate_test(
+        request_json_file,
+        entities_file,
+        expression,
+        exit_code,
+        expected,
+    );
 }
 
 #[test]
