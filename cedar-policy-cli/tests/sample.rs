@@ -151,7 +151,7 @@ fn run_authorize_test_context(
     assert_eq!(exit_code, output, "{:#?}", cmd,);
 }
 
-fn run_authorize_test_json(
+fn run_authorize_json_test(
     policies_file: impl Into<String>,
     entities_file: impl Into<String>,
     request_json_file: impl Into<String>,
@@ -606,7 +606,7 @@ fn test_authorize_json_samples(
     #[case] request_json_file: impl Into<String>,
     #[case] exit_code: CedarExitCode,
 ) {
-    run_authorize_test_json(policies_file, entities_file, request_json_file, exit_code);
+    run_authorize_json_test(policies_file, entities_file, request_json_file, exit_code);
 }
 
 #[rstest]
