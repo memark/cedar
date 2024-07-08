@@ -432,6 +432,62 @@ fn test_check_parse_samples(
     "Photo::\"vacation.jpg\"",
     CedarExitCode::Success
 )]
+#[case(
+    "sample-data/sandbox_c/doesnotexist.cedar",
+    "sample-data/sandbox_c/entities.json",
+    "User::\"alice\"",
+    "Action::\"view\"",
+    "Photo::\"VacationPhoto94.jpg\"",
+    CedarExitCode::Failure
+)]
+#[case(
+    "sample-data/sandbox_c/policies.cedar",
+    "sample-data/sandbox_c/doesnotexist.json",
+    "User::\"alice\"",
+    "Action::\"view\"",
+    "Photo::\"VacationPhoto94.jpg\"",
+    CedarExitCode::Failure
+)]
+#[case(
+    "sample-data/sandbox_c/policies.cedar",
+    "sample-data/sandbox_c/entities.json",
+    "invalid",
+    "Action::\"view\"",
+    "Photo::\"VacationPhoto94.jpg\"",
+    CedarExitCode::Failure
+)]
+#[case(
+    "sample-data/sandbox_c/policies.cedar",
+    "sample-data/sandbox_c/entities.json",
+    "User::\"alice\"",
+    "invalid",
+    "Photo::\"VacationPhoto94.jpg\"",
+    CedarExitCode::Failure
+)]
+#[case(
+    "sample-data/sandbox_c/policies.cedar",
+    "sample-data/sandbox_c/entities.json",
+    "User::\"alice\"",
+    "Action::\"view\"",
+    "invalid",
+    CedarExitCode::Failure
+)]
+#[case(
+    "sample-data/sandbox_c/policies.cedar",
+    "sample-data/sandbox_c/entities.json",
+    "User::\"alice\"",
+    "Action::\"view\"",
+    "Photo::\"VacationPhoto94.jpg\"",
+    CedarExitCode::AuthorizeDeny
+)]
+#[case(
+    "sample-data/sandbox_c/policies.cedar",
+    "sample-data/sandbox_c/entities.json",
+    "User::\"bob\"",
+    "Action::\"view\"",
+    "Photo::\"VacationPhoto94.jpg\"",
+    CedarExitCode::AuthorizeDeny
+)]
 fn test_authorize_samples(
     #[case] policies_file: impl Into<String>,
     #[case] entities_file: impl Into<String>,
@@ -440,10 +496,9 @@ fn test_authorize_samples(
     #[case] resource: impl Into<String>,
     #[case] exit_code: CedarExitCode,
 ) {
-    run_authorize_test_with_linked_policies(
+    run_authorize_test(
         policies_file,
         entities_file,
-        None::<String>,
         principal,
         action,
         resource,
@@ -772,69 +827,6 @@ fn test_evaluate_samples(
 
 #[test]
 fn test_link_samples() {
-    run_authorize_test(
-        "sample-data/sandbox_c/doesnotexist.cedar",
-        "sample-data/sandbox_c/entities.json",
-        "User::\"alice\"",
-        "Action::\"view\"",
-        "Photo::\"VacationPhoto94.jpg\"",
-        CedarExitCode::Failure,
-    );
-
-    run_authorize_test(
-        "sample-data/sandbox_c/policies.cedar",
-        "sample-data/sandbox_c/doesnotexist.json",
-        "User::\"alice\"",
-        "Action::\"view\"",
-        "Photo::\"VacationPhoto94.jpg\"",
-        CedarExitCode::Failure,
-    );
-
-    run_authorize_test(
-        "sample-data/sandbox_c/policies.cedar",
-        "sample-data/sandbox_c/entities.json",
-        "invalid",
-        "Action::\"view\"",
-        "Photo::\"VacationPhoto94.jpg\"",
-        CedarExitCode::Failure,
-    );
-
-    run_authorize_test(
-        "sample-data/sandbox_c/policies.cedar",
-        "sample-data/sandbox_c/entities.json",
-        "User::\"alice\"",
-        "invalid",
-        "Photo::\"VacationPhoto94.jpg\"",
-        CedarExitCode::Failure,
-    );
-
-    run_authorize_test(
-        "sample-data/sandbox_c/policies.cedar",
-        "sample-data/sandbox_c/entities.json",
-        "User::\"alice\"",
-        "Action::\"view\"",
-        "invalid",
-        CedarExitCode::Failure,
-    );
-
-    run_authorize_test(
-        "sample-data/sandbox_c/policies.cedar",
-        "sample-data/sandbox_c/entities.json",
-        "User::\"alice\"",
-        "Action::\"view\"",
-        "Photo::\"VacationPhoto94.jpg\"",
-        CedarExitCode::AuthorizeDeny,
-    );
-
-    run_authorize_test(
-        "sample-data/sandbox_c/policies.cedar",
-        "sample-data/sandbox_c/entities.json",
-        "User::\"bob\"",
-        "Action::\"view\"",
-        "Photo::\"VacationPhoto94.jpg\"",
-        CedarExitCode::AuthorizeDeny,
-    );
-
     let linked_file = tempfile::NamedTempFile::new().expect("Failed to create linked file");
     let linked_file_name = linked_file.path().as_os_str().to_string_lossy().to_string();
 
